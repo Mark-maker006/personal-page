@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark · 产品经理 / 产品设计简历</title>
+    <style>
+      :root { --ink: #10151f; --muted: #677187; --line: #dce2ea; --accent: #5d8dff; --soft: #f3f6fb; }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); background: #e9eef6; font: 14px/1.65 Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .page { width: min(900px, calc(100% - 32px)); margin: 32px auto; padding: 58px 64px; background: #fff; box-shadow: 0 18px 60px rgba(28, 44, 70, .12); }
+      header { display: flex; justify-content: space-between; gap: 32px; padding-bottom: 28px; border-bottom: 2px solid var(--ink); }
+      h1 { margin: 0 0 6px; font-size: 38px; line-height: 1.1; letter-spacing: 0; }
+      .role { color: var(--accent); font-weight: 700; }
+      .contact { display: grid; align-content: end; gap: 3px; color: var(--muted); text-align: right; font-size: 12px; }
+      main { display: grid; grid-template-columns: 1.15fr .85fr; gap: 46px; padding-top: 34px; }
+      section { margin-bottom: 34px; }
+      h2 { margin: 0 0 13px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+      h3 { margin: 0; font-size: 16px; }
+      p { margin: 7px 0 0; color: var(--muted); }
+      .summary { color: #273348; font-size: 15px; line-height: 1.8; }
+      .item { padding: 0 0 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
+      .item:last-child { border-bottom: 0; }
+      .meta { color: var(--accent); font: 11px/1.4 monospace; }
+      ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+      li + li { margin-top: 6px; }
+      .skills { display: flex; flex-wrap: wrap; gap: 7px; }
+      .skills span { padding: 5px 8px; background: var(--soft); color: #2b3a55; font-size: 12px; }
+      .note { padding: 14px 16px; background: var(--soft); border-left: 3px solid var(--accent); color: #35445d; }
+      .print { position: fixed; right: 20px; bottom: 20px; border: 0; border-radius: 6px; padding: 10px 14px; color: #fff; background: var(--accent); cursor: pointer; }
+      @media print { body { background: #fff; } .page { width: 100%; margin: 0; padding: 0; box-shadow: none; } .print { display: none; } }
+      @media (max-width: 720px) { .page { padding: 34px 24px; } header, main { display: block; } .contact { margin-top: 18px; text-align: left; } main { padding-top: 24px; } }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <header>
+        <div><h1>Mark</h1><div class="role">产品经理 / 产品设计</div></div>
+        <div class="contact"><span>教育产品 · 交互原型 · AI 工作流</span><span>hello@mark-product.design</span><span>GitHub / Mark-maker006</span></div>
+      </header>
+      <main>
+        <div>
+          <section><h2>Profile</h2><p class="summary">围绕真实教育产品的问题，推进从用户场景、竞品研究、产品机制到交互原型、数据口径和验收的完整链路。擅长与 Agent 协作处理重复劳动，同时把判断、取舍和边界写清楚。</p></section>
+          <section><h2>Selected work</h2>
+            <div class="item"><div class="meta">悦读小达人 / 产品机制与原型</div><h3>让游戏化服务学习</h3><ul><li>围绕星币、任务、家具空间和多孩管理，明确学习收获与长期资产的展示边界。</li><li>同步 PRD、可交互原型、底部导航和测试口径，处理奖励上限、任务容量和多版本规则冲突。</li></ul></div>
+            <div class="item"><div class="meta">绘本学习产品 / 体验研究</div><h3>把竞品观察变成我方决策</h3><ul><li>按游客、非会员、会员等状态进行实机走查，用路径、截图和通过等级组织证据。</li><li>将竞品功能观察重写为我方借鉴边界、优先级和验证指标，明确深测未完成范围。</li></ul></div>
+            <div class="item"><div class="meta">Agent animation toolkit / AI 工具</div><h3>把失败经验写进工作流</h3><ul><li>设计任务 ID、提交 / 查询分离、透明度检查和技术 / 运动 / 参考一致三类验收。</li><li>完成插件初版与两秒预览，保留跨素材稳定性与正式交付仍需确认的边界。</li></ul></div>
+          </section>
+          <section><h2>Experience</h2><div class="item"><div class="meta">2026 · 产品与设计实践</div><h3>教育产品 / 交互原型 / Agent 工作流</h3><p>参与需求拆解、竞品研究、Figma 还原、可点击 Demo、测试方案、数据分析和动画生产工具探索。</p></div><div class="item"><div class="meta">2024 — 2026 · 学习与项目协作</div><h3>研究、文档与跨工具交付</h3><p>持续整理真实对话、项目产物与验收记录，形成可复用的产品判断和协作方法。</p></div></section>
+        </div>
+        <aside>
+          <section><h2>Strengths</h2><div class="note">问题定义 · 信息架构 · 交互状态 · 竞品实测 · 数据口径 · 验收闭环</div></section>
+          <section><h2>Toolkit</h2><div class="skills"><span>Figma</span><span>React</span><span>Three.js</span><span>HTML / CSS</span><span>Agent workflow</span><span>ADB</span><span>数据分析</span><span>测试设计</span><span>文档结构化</span></div></section>
+          <section><h2>Working principles</h2><ul><li>先定义问题，再选择工具。</li><li>把事实、假设和待验证项分开。</li><li>从入口、状态和回归路径验收。</li><li>不把 Demo、方案或单次通过包装成已上线结果。</li></ul></section>
+          <section><h2>Education</h2><h3>产品与设计相关学习经历</h3><p>持续学习用户研究、产品设计、数据分析与生成式 AI 工具。</p></section>
+        </aside>
+      </main>
+    </article>
+    <button class="print" onclick="window.print()">打印 / 保存 PDF</button>
+  </body>
+</html>

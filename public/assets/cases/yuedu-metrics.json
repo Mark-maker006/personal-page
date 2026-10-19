@@ -1,0 +1,95 @@
+{
+  "title": "悦读小达人 Android 游戏化上线前后观察",
+  "source": "友盟历史离线导出，本轮从原始 CSV 独立重算",
+  "recomputedAt": "2026-10-19",
+  "platform": "Android",
+  "scope": "APP全版本，非游戏化使用人群实验组",
+  "windows": [
+    {
+      "start": "2026-07-18",
+      "end": "2026-08-03",
+      "days": 17,
+      "activeUserDays": 173367,
+      "launchCount": 427148,
+      "dailyActiveUsers": 10198.058823529413,
+      "dailyLaunches": 25126.352941176472,
+      "launchesPerActiveUserDay": 2.463836831692306,
+      "retention": {
+        "d1": {
+          "cohorts": 17,
+          "newUsers": 19844,
+          "weightedRate": 0.4498008768393469,
+          "cohortEnd": "2026-08-03"
+        },
+        "d7": {
+          "cohorts": 17,
+          "newUsers": 19844,
+          "weightedRate": 0.20803009473896392,
+          "cohortEnd": "2026-08-03"
+        }
+      }
+    },
+    {
+      "start": "2026-08-04",
+      "end": "2026-08-20",
+      "days": 17,
+      "activeUserDays": 202981,
+      "launchCount": 508489,
+      "dailyActiveUsers": 11940.058823529413,
+      "dailyLaunches": 29911.117647058825,
+      "launchesPerActiveUserDay": 2.505106389267961,
+      "retention": {
+        "d1": {
+          "cohorts": 16,
+          "newUsers": 17299,
+          "weightedRate": 0.4746403144690444,
+          "cohortEnd": "2026-08-19"
+        },
+        "d7": {
+          "cohorts": 10,
+          "newUsers": 11524,
+          "weightedRate": 0.22683219368274904,
+          "cohortEnd": "2026-08-13"
+        }
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "id": "dailyActiveUsers",
+      "label": "日均活跃用户",
+      "unit": "人",
+      "before": 10198.058823529413,
+      "after": 11940.058823529413,
+      "relativeChange": 0.17081682211724258
+    },
+    {
+      "id": "dailyLaunches",
+      "label": "日均启动次数",
+      "unit": "次",
+      "before": 25126.352941176472,
+      "after": 29911.117647058825,
+      "relativeChange": 0.19042814200230374
+    },
+    {
+      "id": "launchesPerActiveUserDay",
+      "label": "每活跃用户日启动次数",
+      "unit": "次",
+      "before": 2.463836831692306,
+      "after": 2.505106389267961,
+      "relativeChange": 0.01675011796430881
+    }
+  ],
+  "formulas": {
+    "dailyActiveUsers": "每日活跃用户数求和 / 17；和为用户日，不是期间去重人数",
+    "dailyLaunches": "17天启动次数求和 / 17",
+    "launchesPerActiveUserDay": "期间启动次数 / 期间活跃用户日",
+    "retention": "成熟cohort新增用户数加权留存率；原始百分比已四舍五入，结果为近似值"
+  },
+  "limitations": [
+    "两组各17天，但非随机对照实验；版本迁移、渠道投放、暑假周期及用户结构可能影响结果，不能将变化归因于单个功能。",
+    "全APP活跃及启动可同口径对比；上线前普通阅读事件导出只有表头，不能将缺失值视为0或声明阅读完成提升。",
+    "D7上线后仅10个成熟cohort；仅作为探索信号，不宣称已验证长期留存。",
+    "2026-08-04为历史分析后窗起点，已找到当日1.4.0小屋访问，尚未取得正式发版单来确认精确上线时间。"
+  ]
+}

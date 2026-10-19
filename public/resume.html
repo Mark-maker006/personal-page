@@ -1,61 +1,156 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mark · 产品经理 / 产品设计简历</title>
-    <style>
-      :root { --ink: #10151f; --muted: #677187; --line: #dce2ea; --accent: #5d8dff; --soft: #f3f6fb; }
-      * { box-sizing: border-box; }
-      body { margin: 0; color: var(--ink); background: #e9eef6; font: 14px/1.65 Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
-      .page { width: min(900px, calc(100% - 32px)); margin: 32px auto; padding: 58px 64px; background: #fff; box-shadow: 0 18px 60px rgba(28, 44, 70, .12); }
-      header { display: flex; justify-content: space-between; gap: 32px; padding-bottom: 28px; border-bottom: 2px solid var(--ink); }
-      h1 { margin: 0 0 6px; font-size: 38px; line-height: 1.1; letter-spacing: 0; }
-      .role { color: var(--accent); font-weight: 700; }
-      .contact { display: grid; align-content: end; gap: 3px; color: var(--muted); text-align: right; font-size: 12px; }
-      main { display: grid; grid-template-columns: 1.15fr .85fr; gap: 46px; padding-top: 34px; }
-      section { margin-bottom: 34px; }
-      h2 { margin: 0 0 13px; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
-      h3 { margin: 0; font-size: 16px; }
-      p { margin: 7px 0 0; color: var(--muted); }
-      .summary { color: #273348; font-size: 15px; line-height: 1.8; }
-      .item { padding: 0 0 20px; margin-bottom: 20px; border-bottom: 1px solid var(--line); }
-      .item:last-child { border-bottom: 0; }
-      .meta { color: var(--accent); font: 11px/1.4 monospace; }
-      ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
-      li + li { margin-top: 6px; }
-      .skills { display: flex; flex-wrap: wrap; gap: 7px; }
-      .skills span { padding: 5px 8px; background: var(--soft); color: #2b3a55; font-size: 12px; }
-      .note { padding: 14px 16px; background: var(--soft); border-left: 3px solid var(--accent); color: #35445d; }
-      .print { position: fixed; right: 20px; bottom: 20px; border: 0; border-radius: 6px; padding: 10px 14px; color: #fff; background: var(--accent); cursor: pointer; }
-      @media print { body { background: #fff; } .page { width: 100%; margin: 0; padding: 0; box-shadow: none; } .print { display: none; } }
-      @media (max-width: 720px) { .page { padding: 34px 24px; } header, main { display: block; } .contact { margin-top: 18px; text-align: left; } main { padding-top: 24px; } }
-    </style>
-  </head>
-  <body>
-    <article class="page">
-      <header>
-        <div><h1>Mark</h1><div class="role">产品经理 / 产品设计</div></div>
-        <div class="contact"><span>教育产品 · 交互原型 · AI 工作流</span><span>hello@mark-product.design</span><span>GitHub / Mark-maker006</span></div>
-      </header>
-      <main>
-        <div>
-          <section><h2>Profile</h2><p class="summary">围绕真实教育产品的问题，推进从用户场景、竞品研究、产品机制到交互原型、数据口径和验收的完整链路。擅长与 Agent 协作处理重复劳动，同时把判断、取舍和边界写清楚。</p></section>
-          <section><h2>Selected work</h2>
-            <div class="item"><div class="meta">悦读小达人 / 产品机制与原型</div><h3>让游戏化服务学习</h3><ul><li>围绕星币、任务、家具空间和多孩管理，明确学习收获与长期资产的展示边界。</li><li>同步 PRD、可交互原型、底部导航和测试口径，处理奖励上限、任务容量和多版本规则冲突。</li></ul></div>
-            <div class="item"><div class="meta">绘本学习产品 / 体验研究</div><h3>把竞品观察变成我方决策</h3><ul><li>按游客、非会员、会员等状态进行实机走查，用路径、截图和通过等级组织证据。</li><li>将竞品功能观察重写为我方借鉴边界、优先级和验证指标，明确深测未完成范围。</li></ul></div>
-            <div class="item"><div class="meta">Agent animation toolkit / AI 工具</div><h3>把失败经验写进工作流</h3><ul><li>设计任务 ID、提交 / 查询分离、透明度检查和技术 / 运动 / 参考一致三类验收。</li><li>完成插件初版与两秒预览，保留跨素材稳定性与正式交付仍需确认的边界。</li></ul></div>
-          </section>
-          <section><h2>Experience</h2><div class="item"><div class="meta">2026 · 产品与设计实践</div><h3>教育产品 / 交互原型 / Agent 工作流</h3><p>参与需求拆解、竞品研究、Figma 还原、可点击 Demo、测试方案、数据分析和动画生产工具探索。</p></div><div class="item"><div class="meta">2024 — 2026 · 学习与项目协作</div><h3>研究、文档与跨工具交付</h3><p>持续整理真实对话、项目产物与验收记录，形成可复用的产品判断和协作方法。</p></div></section>
-        </div>
-        <aside>
-          <section><h2>Strengths</h2><div class="note">问题定义 · 信息架构 · 交互状态 · 竞品实测 · 数据口径 · 验收闭环</div></section>
-          <section><h2>Toolkit</h2><div class="skills"><span>Figma</span><span>React</span><span>Three.js</span><span>HTML / CSS</span><span>Agent workflow</span><span>ADB</span><span>数据分析</span><span>测试设计</span><span>文档结构化</span></div></section>
-          <section><h2>Working principles</h2><ul><li>先定义问题，再选择工具。</li><li>把事实、假设和待验证项分开。</li><li>从入口、状态和回归路径验收。</li><li>不把 Demo、方案或单次通过包装成已上线结果。</li></ul></section>
-          <section><h2>Education</h2><h3>产品与设计相关学习经历</h3><p>持续学习用户研究、产品设计、数据分析与生成式 AI 工具。</p></section>
-        </aside>
-      </main>
-    </article>
-    <button class="print" onclick="window.print()">打印 / 保存 PDF</button>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mark 的产品经理与产品设计简历：教育产品游戏化、竞品研究与 Agent 工作流实践。" />
+  <title>Mark · 产品经理 / 产品设计简历</title>
+  <style>
+    /* 拉丁字母和数字优先使用 Times New Roman，中文交给苹方与系统中文字体。 */
+    @font-face { font-family: 'Resume Latin'; src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Times'); font-style: normal; font-weight: 100 900; unicode-range: U+0000-024F, U+1E00-1EFF; }
+    :root { --ink: #202023; --muted: #62626b; --line: #dedee4; --accent: #6750df; --soft: #f4f2fc; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: #f5f5f7; font: 14px/1.7 'Resume Latin', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; -webkit-font-smoothing: antialiased; }
+    button { font: inherit; }
+    a { color: inherit; text-decoration-color: #c2b9ed; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    a:hover { color: var(--accent); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .page { width: min(960px, calc(100% - 40px)); margin: 32px auto; padding: 48px 52px; background: #fff; border: 1px solid var(--line); border-radius: 24px; }
+    header { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
+    h1 { margin: 0 0 4px; font-size: 48px; font-weight: 500; line-height: 1; }
+    .role { color: var(--accent); font-weight: 600; }
+    .contact { display: grid; gap: 3px; color: var(--muted); text-align: right; font-size: 12px; }
+    main { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 34px; padding-top: 26px; }
+    section { margin-bottom: 26px; }
+    h2 { margin: 0 0 12px; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .06em; }
+    h2 span { margin-left: 7px; color: var(--muted); font-weight: 400; letter-spacing: .03em; }
+    h3 { margin: 3px 0 0; font-size: 17px; font-weight: 600; line-height: 1.5; }
+    p { margin: 6px 0 0; color: var(--muted); }
+    .summary { color: var(--ink); }
+    .item { padding: 0 0 17px; margin-bottom: 17px; border-bottom: 1px solid var(--line); break-inside: avoid; }
+    .item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+    .meta { color: var(--muted); font-size: 12px; }
+    ul { margin: 7px 0 0; padding-left: 18px; color: var(--muted); }
+    li + li { margin-top: 5px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skills span { padding: 4px 9px; border: 1px solid #e6e1f7; border-radius: 8px; background: var(--soft); font-size: 12px; }
+    .note { padding: 14px 16px; background: var(--soft); border: 1px solid #e6e1f7; border-radius: 14px; }
+    .metrics { margin: 12px 0 0; }
+    .metric { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 0; border-bottom: 1px solid #e6e1f7; }
+    .metric:first-child { padding-top: 0; }
+    .metric:last-child { padding-bottom: 0; border-bottom: 0; }
+    .metric dt { color: var(--muted); font-size: 12px; }
+    .metric dd { margin: 0; color: var(--accent); font-size: 25px; line-height: 1.1; white-space: nowrap; }
+    .caption { margin-top: 11px; font-size: 11px; line-height: 1.65; }
+    .print { position: fixed; right: 20px; bottom: 20px; padding: 10px 16px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; cursor: pointer; }
+    /* A4 打印保留两栏并隐藏控件，避免边框和留白挤占简历内容。 */
+    @page { size: A4; margin: 13mm; }
+    @media print {
+      body { background: #fff; font-size: 12px; line-height: 1.65; }
+      .page { width: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; }
+      header { padding-bottom: 15px; }
+      h1 { font-size: 34px; }
+      h2 { font-size: 12px; margin-bottom: 9px; }
+      h3 { font-size: 14px; }
+      main { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 25px; padding-top: 18px; }
+      .role { font-size: 12px; }
+      .contact, .meta, .skills span, .metric dt { font-size: 10px; }
+      section { margin-bottom: 22px; }
+      .item { padding-bottom: 12px; margin-bottom: 12px; }
+      .note { padding: 10px 12px; }
+      .metric dd { font-size: 21px; }
+      .caption { font-size: 10px; }
+      .print { display: none; }
+      a { text-decoration: none; }
+    }
+    @media screen and (max-width: 720px) {
+      .page { width: calc(100% - 24px); margin: 12px auto 80px; padding: 30px 22px; border-radius: 20px; }
+      header { display: block; }
+      .contact { margin-top: 18px; text-align: left; }
+      main { display: block; padding-top: 24px; }
+      h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page">
+    <header>
+      <div><h1>Mark</h1><div class="role">产品经理 / 产品设计</div></div>
+      <div class="contact">
+        <span>教育产品 · 交互原型 · AI 工作流</span>
+        <a href="https://github.com/Mark-maker006">github.com/Mark-maker006</a>
+        <a href="https://mark-maker006.github.io/personal-page/">mark-maker006.github.io/personal-page</a>
+      </div>
+    </header>
+    <main>
+      <div>
+        <section aria-labelledby="profile-title">
+          <h2 id="profile-title">个人概述 <span>Profile</span></h2>
+          <p class="summary">围绕真实教育产品问题，推进用户场景、竞品研究、产品机制、交互原型与验收。通过 Agent 协作处理重复工作，把判断、取舍、数据口径与交付边界写清楚。</p>
+        </section>
+        <section aria-labelledby="work-title">
+          <h2 id="work-title">项目实践 <span>Selected work</span></h2>
+          <div class="item">
+            <div class="meta">悦读小达人 · 产品机制与原型</div>
+            <h3>让游戏化服务持续阅读</h3>
+            <ul>
+              <li>围绕星币、任务、家具空间与多孩管理，梳理阅读行为、奖励反馈和长期资产之间的关系。</li>
+              <li>对齐 PRD、可交互原型、导航与测试口径，处理奖励上限、任务容量和多版本规则冲突。</li>
+              <li>结合友盟数据观察上线前后活跃及启动变化，区分整体趋势与功能贡献，补充游戏化参与、阅读完成和留存的验证思路。</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="meta">绘本学习产品 · 竞品与体验研究</div>
+            <h3>把竞品观察转化为产品决策</h3>
+            <ul>
+              <li>按游客、非会员、会员等状态进行实机走查，用路径、截图与验证等级组织证据。</li>
+              <li>将观察转化为我方借鉴边界、优先级与验证指标；标明深测未完成范围，避免把观察包装成结论。</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="meta">Agent animation toolkit · AI 工具探索</div>
+            <h3>把失败经验写进工作流</h3>
+            <ul>
+              <li>设计任务 ID、提交与查询分离、透明度检查，以及技术、运动和参考一致性三类验收。</li>
+              <li>形成插件初版与两秒预览；记录异常恢复方式，保留跨素材稳定性与正式交付待验证的边界。</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <aside>
+        <section aria-labelledby="data-title">
+          <h2 id="data-title">数据观察 <span>Before / After</span></h2>
+          <div class="note">
+            <h3>游戏化相关观察窗</h3>
+            <p>悦读小达人 · Android 全 App</p>
+            <dl class="metrics">
+              <div class="metric"><dt>日均活跃用户</dt><dd>+17.08%</dd></div>
+              <div class="metric"><dt>日均启动次数</dt><dd>+19.04%</dd></div>
+              <div class="metric"><dt>每活跃用户日启动</dt><dd>+1.68%</dd></div>
+            </dl>
+            <p class="caption">来源：友盟；2026.07.18—08.03 与 08.04—08.20，各 17 天。数值为相对变化，非百分点；覆盖整个 Android App，不能据此认定游戏化的因果贡献。08.04 为历史后窗起点，精确发版日未确认。</p>
+          </div>
+        </section>
+        <section aria-labelledby="strength-title">
+          <h2 id="strength-title">能力方向 <span>Strengths</span></h2>
+          <p>问题定义 · 信息架构 · 交互状态 · 竞品实测 · 数据口径 · 验收闭环</p>
+        </section>
+        <section aria-labelledby="tool-title">
+          <h2 id="tool-title">工具实践 <span>Toolkit</span></h2>
+          <div class="skills"><span>Figma</span><span>React</span><span>HTML / CSS</span><span>Agent workflow</span><span>ADB</span><span>数据分析</span><span>测试设计</span><span>文档结构化</span></div>
+        </section>
+        <section aria-labelledby="principle-title">
+          <h2 id="principle-title">工作方法 <span>Principles</span></h2>
+          <ul>
+            <li>先定义用户问题，再选择实现工具。</li>
+            <li>用真实文件、路径与截图支持判断。</li>
+            <li>明确事实、假设与待验证项。</li>
+            <li>从入口、状态和回归路径验收。</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </article>
+  <button class="print" type="button" onclick="window.print()">打印 / 保存 PDF</button>
+</body>
 </html>

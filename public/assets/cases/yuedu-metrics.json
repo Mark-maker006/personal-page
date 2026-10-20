@@ -1,55 +1,858 @@
 {
-  "title": "悦读小达人 Android 游戏化上线前后观察",
-  "source": "友盟历史离线导出，本轮从原始 CSV 独立重算",
-  "recomputedAt": "2026-10-19",
-  "platform": "Android",
-  "scope": "APP全版本，非游戏化使用人群实验组",
+  "title": "悦读小达人 Android + iOS 游戏化上线前后观察",
+  "source": "2026-10-19 从友盟 U-App 后台新导出的双端统计报表，原始 CSV 逐字段对账",
+  "recomputedAt": "2026-10-20",
+  "launchDate": "2026-08-04",
+  "launchDateBasis": "用户确认",
+  "platform": "Android + iOS",
+  "scope": "全 APP；两端统计合计，非跨端去重用户，非随机实验组",
+  "observationEnd": "2026-10-18",
   "windows": [
     {
-      "start": "2026-07-18",
+      "id": "before",
+      "start": "2026-07-07",
       "end": "2026-08-03",
-      "days": 17,
-      "activeUserDays": 173367,
-      "launchCount": 427148,
-      "dailyActiveUsers": 10198.058823529413,
-      "dailyLaunches": 25126.352941176472,
-      "launchesPerActiveUserDay": 2.463836831692306,
+      "days": 28,
+      "activeUserDays": 366220,
+      "launchCount": 1075725,
+      "newUsers": 47075,
+      "dailyNewUsers": 1681.25,
+      "dailyActiveUsers": 13079.285714285714,
+      "dailyLaunches": 38418.75,
+      "launchesPerActiveUserDay": 2.9373737097919284,
+      "approxDailyUseMinutes": 17.30616318970382,
       "retention": {
         "d1": {
-          "cohorts": 17,
-          "newUsers": 19844,
-          "weightedRate": 0.4498008768393469,
-          "cohortEnd": "2026-08-03"
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 47075,
+          "retainedUsers": 21417,
+          "weightedRate": 0.4549548592671269
         },
         "d7": {
-          "cohorts": 17,
-          "newUsers": 19844,
-          "weightedRate": 0.20803009473896392,
-          "cohortEnd": "2026-08-03"
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 47075,
+          "retainedUsers": 9745,
+          "weightedRate": 0.20701009028146575
+        },
+        "d14": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 47075,
+          "retainedUsers": 7347,
+          "weightedRate": 0.15607010090281465
+        },
+        "d30": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 47075,
+          "retainedUsers": 5338,
+          "weightedRate": 0.1133935209771641
+        }
+      },
+      "activeRetention": {
+        "d1": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 366220,
+          "retainedUsers": 197587,
+          "weightedRate": 0.5395308830757468
+        },
+        "d7": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 366220,
+          "retainedUsers": 143924,
+          "weightedRate": 0.392998743924417
+        },
+        "d14": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 366220,
+          "retainedUsers": 123758,
+          "weightedRate": 0.3379334826060838
+        },
+        "d30": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 366220,
+          "retainedUsers": 96568,
+          "weightedRate": 0.26368849325542026
+        }
+      },
+      "events": {
+        "Android": {
+          "reading_cottage_entry_click": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_map_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_achievement_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_catalog_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "learning_plan_start_click": {
+            "messages": 8,
+            "userDays": 2,
+            "observedDays": 1,
+            "missingDays": 27
+          },
+          "learning_plan_complete": {
+            "messages": 6,
+            "userDays": 2,
+            "observedDays": 1,
+            "missingDays": 27
+          },
+          "picture_book_start": {
+            "messages": 12,
+            "userDays": 3,
+            "observedDays": 1,
+            "missingDays": 27
+          },
+          "picture_book_complete": {
+            "messages": 4,
+            "userDays": 2,
+            "observedDays": 1,
+            "missingDays": 27
+          },
+          "article_read_complete": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          }
+        },
+        "iOS": {
+          "reading_cottage_entry_click": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_map_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_achievement_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "reading_cottage_catalog_view": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "learning_plan_start_click": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "learning_plan_complete": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "picture_book_start": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "picture_book_complete": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          },
+          "article_read_complete": {
+            "messages": null,
+            "userDays": null,
+            "observedDays": 0,
+            "missingDays": 28
+          }
         }
       }
     },
     {
+      "id": "after",
       "start": "2026-08-04",
-      "end": "2026-08-20",
-      "days": 17,
-      "activeUserDays": 202981,
-      "launchCount": 508489,
-      "dailyActiveUsers": 11940.058823529413,
-      "dailyLaunches": 29911.117647058825,
-      "launchesPerActiveUserDay": 2.505106389267961,
+      "end": "2026-08-31",
+      "days": 28,
+      "activeUserDays": 451770,
+      "launchCount": 1356472,
+      "newUsers": 39690,
+      "dailyNewUsers": 1417.5,
+      "dailyActiveUsers": 16134.642857142857,
+      "dailyLaunches": 48445.42857142857,
+      "launchesPerActiveUserDay": 3.002572105274808,
+      "approxDailyUseMinutes": 18.161764725413374,
       "retention": {
         "d1": {
-          "cohorts": 16,
-          "newUsers": 17299,
-          "weightedRate": 0.4746403144690444,
-          "cohortEnd": "2026-08-19"
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 39690,
+          "retainedUsers": 18632,
+          "weightedRate": 0.4694381456286218
         },
         "d7": {
-          "cohorts": 10,
-          "newUsers": 11524,
-          "weightedRate": 0.22683219368274904,
-          "cohortEnd": "2026-08-13"
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 39690,
+          "retainedUsers": 9005,
+          "weightedRate": 0.22688334593096499
+        },
+        "d14": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 39690,
+          "retainedUsers": 6804,
+          "weightedRate": 0.17142857142857143
+        },
+        "d30": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 39690,
+          "retainedUsers": 4893,
+          "weightedRate": 0.12328042328042328
+        }
+      },
+      "activeRetention": {
+        "d1": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 451770,
+          "retainedUsers": 255546,
+          "weightedRate": 0.5656550899794143
+        },
+        "d7": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 451770,
+          "retainedUsers": 190022,
+          "weightedRate": 0.42061668548155035
+        },
+        "d14": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 451770,
+          "retainedUsers": 162622,
+          "weightedRate": 0.35996635456094916
+        },
+        "d30": {
+          "cohorts": 56,
+          "cohortDates": 28,
+          "baseUsers": 451770,
+          "retainedUsers": 125024,
+          "weightedRate": 0.27674259025610376
+        }
+      },
+      "events": {
+        "Android": {
+          "reading_cottage_entry_click": {
+            "messages": 193106,
+            "userDays": 85615,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "reading_cottage_view": {
+            "messages": 210864,
+            "userDays": 91045,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": 40743,
+            "userDays": 25186,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "reading_cottage_map_view": {
+            "messages": 243889,
+            "userDays": 100957,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "reading_cottage_achievement_view": {
+            "messages": 59819,
+            "userDays": 42082,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "reading_cottage_catalog_view": {
+            "messages": 77700,
+            "userDays": 46081,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "learning_plan_start_click": {
+            "messages": 215786,
+            "userDays": 103825,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "learning_plan_complete": {
+            "messages": 62963,
+            "userDays": 53421,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "picture_book_start": {
+            "messages": 322932,
+            "userDays": 72483,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "picture_book_complete": {
+            "messages": 147735,
+            "userDays": 40731,
+            "observedDays": 28,
+            "missingDays": 0
+          },
+          "article_read_complete": {
+            "messages": 25600,
+            "userDays": 10934,
+            "observedDays": 27,
+            "missingDays": 1
+          }
+        },
+        "iOS": {
+          "reading_cottage_entry_click": {
+            "messages": 38590,
+            "userDays": 17941,
+            "observedDays": 27,
+            "missingDays": 1
+          },
+          "reading_cottage_view": {
+            "messages": 43178,
+            "userDays": 18751,
+            "observedDays": 26,
+            "missingDays": 2
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": 8941,
+            "userDays": 5261,
+            "observedDays": 16,
+            "missingDays": 12
+          },
+          "reading_cottage_map_view": {
+            "messages": 48999,
+            "userDays": 20787,
+            "observedDays": 27,
+            "missingDays": 1
+          },
+          "reading_cottage_achievement_view": {
+            "messages": 15316,
+            "userDays": 10787,
+            "observedDays": 21,
+            "missingDays": 7
+          },
+          "reading_cottage_catalog_view": {
+            "messages": 18641,
+            "userDays": 11224,
+            "observedDays": 21,
+            "missingDays": 7
+          },
+          "learning_plan_start_click": {
+            "messages": 36917,
+            "userDays": 19427,
+            "observedDays": 25,
+            "missingDays": 3
+          },
+          "learning_plan_complete": {
+            "messages": 10624,
+            "userDays": 10201,
+            "observedDays": 19,
+            "missingDays": 9
+          },
+          "picture_book_start": {
+            "messages": 58626,
+            "userDays": 14864,
+            "observedDays": 27,
+            "missingDays": 1
+          },
+          "picture_book_complete": {
+            "messages": 26275,
+            "userDays": 8040,
+            "observedDays": 22,
+            "missingDays": 6
+          },
+          "article_read_complete": {
+            "messages": 4685,
+            "userDays": 2075,
+            "observedDays": 16,
+            "missingDays": 12
+          }
+        }
+      }
+    },
+    {
+      "id": "september",
+      "start": "2026-09-01",
+      "end": "2026-09-30",
+      "days": 30,
+      "activeUserDays": 683528,
+      "launchCount": 1973592,
+      "newUsers": 58639,
+      "dailyNewUsers": 1954.6333333333334,
+      "dailyActiveUsers": 22784.266666666666,
+      "dailyLaunches": 65786.4,
+      "launchesPerActiveUserDay": 2.887360868903688,
+      "approxDailyUseMinutes": 15.914437472446874,
+      "retention": {
+        "d1": {
+          "cohorts": 60,
+          "cohortDates": 30,
+          "baseUsers": 58639,
+          "retainedUsers": 29002,
+          "weightedRate": 0.4945855147598015
+        },
+        "d7": {
+          "cohorts": 60,
+          "cohortDates": 30,
+          "baseUsers": 58639,
+          "retainedUsers": 13495,
+          "weightedRate": 0.23013693957946077
+        },
+        "d14": {
+          "cohorts": 60,
+          "cohortDates": 30,
+          "baseUsers": 58639,
+          "retainedUsers": 9913,
+          "weightedRate": 0.16905131397192993
+        },
+        "d30": {
+          "cohorts": 36,
+          "cohortDates": 18,
+          "baseUsers": 38938,
+          "retainedUsers": 4650,
+          "weightedRate": 0.11942061739175099
+        }
+      },
+      "activeRetention": {
+        "d1": {
+          "cohorts": 60,
+          "cohortDates": 30,
+          "baseUsers": 683528,
+          "retainedUsers": 373149,
+          "weightedRate": 0.5459161877787011
+        },
+        "d7": {
+          "cohorts": 60,
+          "cohortDates": 30,
+          "baseUsers": 683528,
+          "retainedUsers": 275432,
+          "weightedRate": 0.4029564260717922
+        },
+        "d14": {
+          "cohorts": 60,
+          "cohortDates": 30,
+          "baseUsers": 683528,
+          "retainedUsers": 240604,
+          "weightedRate": 0.3520031366674079
+        },
+        "d30": {
+          "cohorts": 36,
+          "cohortDates": 18,
+          "baseUsers": 407608,
+          "retainedUsers": 114198,
+          "weightedRate": 0.2801662381503798
+        }
+      },
+      "events": {
+        "Android": {
+          "reading_cottage_entry_click": {
+            "messages": 276108,
+            "userDays": 140889,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_view": {
+            "messages": 335215,
+            "userDays": 162500,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": 51696,
+            "userDays": 38028,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_map_view": {
+            "messages": 379034,
+            "userDays": 181288,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_achievement_view": {
+            "messages": 67894,
+            "userDays": 53112,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_catalog_view": {
+            "messages": 100560,
+            "userDays": 66901,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "learning_plan_start_click": {
+            "messages": 387114,
+            "userDays": 202819,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "learning_plan_complete": {
+            "messages": 129150,
+            "userDays": 108442,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "picture_book_start": {
+            "messages": 607958,
+            "userDays": 151729,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "picture_book_complete": {
+            "messages": 349090,
+            "userDays": 93898,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "article_read_complete": {
+            "messages": 46004,
+            "userDays": 19454,
+            "observedDays": 30,
+            "missingDays": 0
+          }
+        },
+        "iOS": {
+          "reading_cottage_entry_click": {
+            "messages": 104793,
+            "userDays": 56608,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_view": {
+            "messages": 126187,
+            "userDays": 68076,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": 20418,
+            "userDays": 15514,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_map_view": {
+            "messages": 146845,
+            "userDays": 76084,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_achievement_view": {
+            "messages": 28098,
+            "userDays": 23272,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "reading_cottage_catalog_view": {
+            "messages": 41888,
+            "userDays": 29270,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "learning_plan_start_click": {
+            "messages": 142513,
+            "userDays": 85001,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "learning_plan_complete": {
+            "messages": 50057,
+            "userDays": 48050,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "picture_book_start": {
+            "messages": 254202,
+            "userDays": 63781,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "picture_book_complete": {
+            "messages": 138135,
+            "userDays": 37706,
+            "observedDays": 30,
+            "missingDays": 0
+          },
+          "article_read_complete": {
+            "messages": 15512,
+            "userDays": 7254,
+            "observedDays": 30,
+            "missingDays": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "october",
+      "start": "2026-10-01",
+      "end": "2026-10-18",
+      "days": 18,
+      "activeUserDays": 389699,
+      "launchCount": 1076166,
+      "newUsers": 20865,
+      "dailyNewUsers": 1159.1666666666667,
+      "dailyActiveUsers": 21649.944444444445,
+      "dailyLaunches": 59787.0,
+      "launchesPerActiveUserDay": 2.761531335723212,
+      "approxDailyUseMinutes": 16.836209869668643,
+      "retention": {
+        "d1": {
+          "cohorts": 34,
+          "cohortDates": 17,
+          "baseUsers": 19109,
+          "retainedUsers": 9103,
+          "weightedRate": 0.476372389973311
+        },
+        "d7": {
+          "cohorts": 22,
+          "cohortDates": 11,
+          "baseUsers": 11471,
+          "retainedUsers": 2772,
+          "weightedRate": 0.2416528637433528
+        },
+        "d14": {
+          "cohorts": 8,
+          "cohortDates": 4,
+          "baseUsers": 4156,
+          "retainedUsers": 727,
+          "weightedRate": 0.17492781520692974
+        },
+        "d30": {
+          "cohorts": 0,
+          "cohortDates": 0,
+          "baseUsers": 0,
+          "retainedUsers": 0,
+          "weightedRate": null
+        }
+      },
+      "activeRetention": {
+        "d1": {
+          "cohorts": 34,
+          "cohortDates": 17,
+          "baseUsers": 365051,
+          "retainedUsers": 198456,
+          "weightedRate": 0.5436391079602576
+        },
+        "d7": {
+          "cohorts": 22,
+          "cohortDates": 11,
+          "baseUsers": 224906,
+          "retainedUsers": 96966,
+          "weightedRate": 0.4311401207615626
+        },
+        "d14": {
+          "cohorts": 8,
+          "cohortDates": 4,
+          "baseUsers": 76141,
+          "retainedUsers": 28853,
+          "weightedRate": 0.3789417002666106
+        },
+        "d30": {
+          "cohorts": 0,
+          "cohortDates": 0,
+          "baseUsers": 0,
+          "retainedUsers": 0,
+          "weightedRate": null
+        }
+      },
+      "events": {
+        "Android": {
+          "reading_cottage_entry_click": {
+            "messages": 210725,
+            "userDays": 93648,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_view": {
+            "messages": 218388,
+            "userDays": 102622,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": 29742,
+            "userDays": 23714,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_map_view": {
+            "messages": 271308,
+            "userDays": 118089,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_achievement_view": {
+            "messages": 28313,
+            "userDays": 23102,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_catalog_view": {
+            "messages": 54310,
+            "userDays": 35914,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "learning_plan_start_click": {
+            "messages": 228764,
+            "userDays": 122965,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "learning_plan_complete": {
+            "messages": 85400,
+            "userDays": 70964,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "picture_book_start": {
+            "messages": 354313,
+            "userDays": 81964,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "picture_book_complete": {
+            "messages": 202953,
+            "userDays": 52564,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "article_read_complete": {
+            "messages": 27025,
+            "userDays": 10667,
+            "observedDays": 18,
+            "missingDays": 0
+          }
+        },
+        "iOS": {
+          "reading_cottage_entry_click": {
+            "messages": 77948,
+            "userDays": 36140,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_view": {
+            "messages": 79427,
+            "userDays": 40583,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_go_reading_click": {
+            "messages": 11397,
+            "userDays": 9189,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_map_view": {
+            "messages": 101892,
+            "userDays": 47362,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_achievement_view": {
+            "messages": 10238,
+            "userDays": 8709,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "reading_cottage_catalog_view": {
+            "messages": 20511,
+            "userDays": 14100,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "learning_plan_start_click": {
+            "messages": 81360,
+            "userDays": 50638,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "learning_plan_complete": {
+            "messages": 32052,
+            "userDays": 30757,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "picture_book_start": {
+            "messages": 132226,
+            "userDays": 32250,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "picture_book_complete": {
+            "messages": 70218,
+            "userDays": 18995,
+            "observedDays": 18,
+            "missingDays": 0
+          },
+          "article_read_complete": {
+            "messages": 9177,
+            "userDays": 3726,
+            "observedDays": 18,
+            "missingDays": 0
+          }
         }
       }
     }
@@ -59,37 +862,2154 @@
       "id": "dailyActiveUsers",
       "label": "日均活跃用户",
       "unit": "人",
-      "before": 10198.058823529413,
-      "after": 11940.058823529413,
-      "relativeChange": 0.17081682211724258
+      "before": 13079.285714285714,
+      "after": 16134.642857142857,
+      "relativeChange": 0.23360275244388617
     },
     {
       "id": "dailyLaunches",
       "label": "日均启动次数",
       "unit": "次",
-      "before": 25126.352941176472,
-      "after": 29911.117647058825,
-      "relativeChange": 0.19042814200230374
+      "before": 38418.75,
+      "after": 48445.42857142857,
+      "relativeChange": 0.2609839875432849
     },
     {
       "id": "launchesPerActiveUserDay",
       "label": "每活跃用户日启动次数",
       "unit": "次",
-      "before": 2.463836831692306,
-      "after": 2.505106389267961,
-      "relativeChange": 0.01675011796430881
+      "before": 2.9373737097919284,
+      "after": 3.002572105274808,
+      "relativeChange": 0.022196152728383378
     }
   ],
+  "byPlatform": {
+    "Android": {
+      "windows": [
+        {
+          "id": "before",
+          "start": "2026-07-07",
+          "end": "2026-08-03",
+          "days": 28,
+          "activeUserDays": 273848,
+          "launchCount": 675179,
+          "newUsers": 34899,
+          "dailyNewUsers": 1246.392857142857,
+          "dailyActiveUsers": 9780.285714285714,
+          "dailyLaunches": 24113.535714285714,
+          "launchesPerActiveUserDay": 2.465524670620198,
+          "approxDailyUseMinutes": 17.5056532577683,
+          "retention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 34899,
+              "retainedUsers": 15927,
+              "weightedRate": 0.4563741081406344
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 34899,
+              "retainedUsers": 7353,
+              "weightedRate": 0.2106937161523253
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 34899,
+              "retainedUsers": 5537,
+              "weightedRate": 0.15865784119888823
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 34899,
+              "retainedUsers": 4046,
+              "weightedRate": 0.11593455399868191
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 273848,
+              "retainedUsers": 149105,
+              "weightedRate": 0.5444808799041804
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 273848,
+              "retainedUsers": 109111,
+              "weightedRate": 0.3984363588560077
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 273848,
+              "retainedUsers": 93947,
+              "weightedRate": 0.3430625748590459
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 273848,
+              "retainedUsers": 73399,
+              "weightedRate": 0.26802824924775787
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_map_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_achievement_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_catalog_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "learning_plan_start_click": {
+                "messages": 8,
+                "userDays": 2,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "learning_plan_complete": {
+                "messages": 6,
+                "userDays": 2,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "picture_book_start": {
+                "messages": 12,
+                "userDays": 3,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "picture_book_complete": {
+                "messages": 4,
+                "userDays": 2,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "article_read_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              }
+            }
+          }
+        },
+        {
+          "id": "after",
+          "start": "2026-08-04",
+          "end": "2026-08-31",
+          "days": 28,
+          "activeUserDays": 340382,
+          "launchCount": 846629,
+          "newUsers": 29045,
+          "dailyNewUsers": 1037.3214285714287,
+          "dailyActiveUsers": 12156.5,
+          "dailyLaunches": 30236.75,
+          "launchesPerActiveUserDay": 2.487290749804631,
+          "approxDailyUseMinutes": 18.277705049033145,
+          "retention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 29045,
+              "retainedUsers": 13829,
+              "weightedRate": 0.47612325701497676
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 29045,
+              "retainedUsers": 6679,
+              "weightedRate": 0.22995352039938027
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 29045,
+              "retainedUsers": 5072,
+              "weightedRate": 0.17462558099500775
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 29045,
+              "retainedUsers": 3628,
+              "weightedRate": 0.12490962299879498
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 340382,
+              "retainedUsers": 195075,
+              "weightedRate": 0.5731060984423383
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 340382,
+              "retainedUsers": 145363,
+              "weightedRate": 0.4270584225957894
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 340382,
+              "retainedUsers": 124074,
+              "weightedRate": 0.36451398722611655
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 340382,
+              "retainedUsers": 94788,
+              "weightedRate": 0.2784753600366647
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": 193106,
+                "userDays": 85615,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 210864,
+                "userDays": 91045,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 40743,
+                "userDays": 25186,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 243889,
+                "userDays": 100957,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 59819,
+                "userDays": 42082,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 77700,
+                "userDays": 46081,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 215786,
+                "userDays": 103825,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 62963,
+                "userDays": 53421,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 322932,
+                "userDays": 72483,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 147735,
+                "userDays": 40731,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 25600,
+                "userDays": 10934,
+                "observedDays": 27,
+                "missingDays": 1
+              }
+            }
+          }
+        },
+        {
+          "id": "september",
+          "start": "2026-09-01",
+          "end": "2026-09-30",
+          "days": 30,
+          "activeUserDays": 495334,
+          "launchCount": 1169150,
+          "newUsers": 41055,
+          "dailyNewUsers": 1368.5,
+          "dailyActiveUsers": 16511.133333333335,
+          "dailyLaunches": 38971.666666666664,
+          "launchesPerActiveUserDay": 2.360326567528173,
+          "approxDailyUseMinutes": 16.039906002818302,
+          "retention": {
+            "d1": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 41055,
+              "retainedUsers": 20347,
+              "weightedRate": 0.49560345877481427
+            },
+            "d7": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 41055,
+              "retainedUsers": 9484,
+              "weightedRate": 0.23100718548288882
+            },
+            "d14": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 41055,
+              "retainedUsers": 7015,
+              "weightedRate": 0.17086834733893558
+            },
+            "d30": {
+              "cohorts": 18,
+              "cohortDates": 18,
+              "baseUsers": 27235,
+              "retainedUsers": 3298,
+              "weightedRate": 0.12109418028272444
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 495334,
+              "retainedUsers": 270979,
+              "weightedRate": 0.5470631937238308
+            },
+            "d7": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 495334,
+              "retainedUsers": 201330,
+              "weightedRate": 0.4064530195787085
+            },
+            "d14": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 495334,
+              "retainedUsers": 175959,
+              "weightedRate": 0.3552330346796303
+            },
+            "d30": {
+              "cohorts": 18,
+              "cohortDates": 18,
+              "baseUsers": 296173,
+              "retainedUsers": 83799,
+              "weightedRate": 0.2829393631424877
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": 276108,
+                "userDays": 140889,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 335215,
+                "userDays": 162500,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 51696,
+                "userDays": 38028,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 379034,
+                "userDays": 181288,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 67894,
+                "userDays": 53112,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 100560,
+                "userDays": 66901,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 387114,
+                "userDays": 202819,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 129150,
+                "userDays": 108442,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 607958,
+                "userDays": 151729,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 349090,
+                "userDays": 93898,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 46004,
+                "userDays": 19454,
+                "observedDays": 30,
+                "missingDays": 0
+              }
+            }
+          }
+        },
+        {
+          "id": "october",
+          "start": "2026-10-01",
+          "end": "2026-10-18",
+          "days": 18,
+          "activeUserDays": 283967,
+          "launchCount": 638079,
+          "newUsers": 15017,
+          "dailyNewUsers": 834.2777777777778,
+          "dailyActiveUsers": 15775.944444444445,
+          "dailyLaunches": 35448.833333333336,
+          "launchesPerActiveUserDay": 2.2470181394316944,
+          "approxDailyUseMinutes": 17.01057364646831,
+          "retention": {
+            "d1": {
+              "cohorts": 17,
+              "cohortDates": 17,
+              "baseUsers": 13761,
+              "retainedUsers": 6622,
+              "weightedRate": 0.4812150279776179
+            },
+            "d7": {
+              "cohorts": 11,
+              "cohortDates": 11,
+              "baseUsers": 8307,
+              "retainedUsers": 2055,
+              "weightedRate": 0.24738172625496568
+            },
+            "d14": {
+              "cohorts": 4,
+              "cohortDates": 4,
+              "baseUsers": 2998,
+              "retainedUsers": 527,
+              "weightedRate": 0.17578385590393597
+            },
+            "d30": {
+              "cohorts": 0,
+              "cohortDates": 0,
+              "baseUsers": 0,
+              "retainedUsers": 0,
+              "weightedRate": null
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 17,
+              "cohortDates": 17,
+              "baseUsers": 266004,
+              "retainedUsers": 145133,
+              "weightedRate": 0.5456045773747763
+            },
+            "d7": {
+              "cohorts": 11,
+              "cohortDates": 11,
+              "baseUsers": 164113,
+              "retainedUsers": 71043,
+              "weightedRate": 0.4328907521037334
+            },
+            "d14": {
+              "cohorts": 4,
+              "cohortDates": 4,
+              "baseUsers": 55584,
+              "retainedUsers": 21153,
+              "weightedRate": 0.3805591537132988
+            },
+            "d30": {
+              "cohorts": 0,
+              "cohortDates": 0,
+              "baseUsers": 0,
+              "retainedUsers": 0,
+              "weightedRate": null
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": 210725,
+                "userDays": 93648,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 218388,
+                "userDays": 102622,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 29742,
+                "userDays": 23714,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 271308,
+                "userDays": 118089,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 28313,
+                "userDays": 23102,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 54310,
+                "userDays": 35914,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 228764,
+                "userDays": 122965,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 85400,
+                "userDays": 70964,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 354313,
+                "userDays": 81964,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 202953,
+                "userDays": 52564,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 27025,
+                "userDays": 10667,
+                "observedDays": 18,
+                "missingDays": 0
+              }
+            }
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "id": "dailyActiveUsers",
+          "label": "日均活跃用户",
+          "unit": "人",
+          "before": 9780.285714285714,
+          "after": 12156.5,
+          "relativeChange": 0.24295959802518197
+        },
+        {
+          "id": "dailyLaunches",
+          "label": "日均启动次数",
+          "unit": "次",
+          "before": 24113.535714285714,
+          "after": 30236.75,
+          "relativeChange": 0.25393266082031585
+        },
+        {
+          "id": "launchesPerActiveUserDay",
+          "label": "每活跃用户日启动次数",
+          "unit": "次",
+          "before": 2.465524670620198,
+          "after": 2.487290749804631,
+          "relativeChange": 0.0088281733473623
+        }
+      ]
+    },
+    "iOS": {
+      "windows": [
+        {
+          "id": "before",
+          "start": "2026-07-07",
+          "end": "2026-08-03",
+          "days": 28,
+          "activeUserDays": 92372,
+          "launchCount": 400546,
+          "newUsers": 12176,
+          "dailyNewUsers": 434.85714285714283,
+          "dailyActiveUsers": 3299.0,
+          "dailyLaunches": 14305.214285714286,
+          "launchesPerActiveUserDay": 4.336227428225003,
+          "approxDailyUseMinutes": 16.714750682024857,
+          "retention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 12176,
+              "retainedUsers": 5490,
+              "weightedRate": 0.45088699080157685
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 12176,
+              "retainedUsers": 2392,
+              "weightedRate": 0.1964520367936925
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 12176,
+              "retainedUsers": 1810,
+              "weightedRate": 0.14865308804204994
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 12176,
+              "retainedUsers": 1292,
+              "weightedRate": 0.10611038107752957
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 92372,
+              "retainedUsers": 48482,
+              "weightedRate": 0.5248560169748409
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 92372,
+              "retainedUsers": 34813,
+              "weightedRate": 0.376878274801888
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 92372,
+              "retainedUsers": 29811,
+              "weightedRate": 0.3227276663924133
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 92372,
+              "retainedUsers": 23169,
+              "weightedRate": 0.25082276014376653
+            }
+          },
+          "events": {
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_map_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_achievement_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_catalog_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "learning_plan_start_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "learning_plan_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "picture_book_start": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "picture_book_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "article_read_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              }
+            }
+          }
+        },
+        {
+          "id": "after",
+          "start": "2026-08-04",
+          "end": "2026-08-31",
+          "days": 28,
+          "activeUserDays": 111388,
+          "launchCount": 509843,
+          "newUsers": 10645,
+          "dailyNewUsers": 380.17857142857144,
+          "dailyActiveUsers": 3978.1428571428573,
+          "dailyLaunches": 18208.678571428572,
+          "launchesPerActiveUserDay": 4.577180665780874,
+          "approxDailyUseMinutes": 17.807471630696302,
+          "retention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 10645,
+              "retainedUsers": 4803,
+              "weightedRate": 0.45119774542038515
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 10645,
+              "retainedUsers": 2326,
+              "weightedRate": 0.21850634100516675
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 10645,
+              "retainedUsers": 1732,
+              "weightedRate": 0.1627054955378112
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 10645,
+              "retainedUsers": 1265,
+              "weightedRate": 0.11883513386566463
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 111388,
+              "retainedUsers": 60471,
+              "weightedRate": 0.5428861277695982
+            },
+            "d7": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 111388,
+              "retainedUsers": 44659,
+              "weightedRate": 0.40093187776062056
+            },
+            "d14": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 111388,
+              "retainedUsers": 38548,
+              "weightedRate": 0.34606959457033076
+            },
+            "d30": {
+              "cohorts": 28,
+              "cohortDates": 28,
+              "baseUsers": 111388,
+              "retainedUsers": 30236,
+              "weightedRate": 0.2714475526986749
+            }
+          },
+          "events": {
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": 38590,
+                "userDays": 17941,
+                "observedDays": 27,
+                "missingDays": 1
+              },
+              "reading_cottage_view": {
+                "messages": 43178,
+                "userDays": 18751,
+                "observedDays": 26,
+                "missingDays": 2
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 8941,
+                "userDays": 5261,
+                "observedDays": 16,
+                "missingDays": 12
+              },
+              "reading_cottage_map_view": {
+                "messages": 48999,
+                "userDays": 20787,
+                "observedDays": 27,
+                "missingDays": 1
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 15316,
+                "userDays": 10787,
+                "observedDays": 21,
+                "missingDays": 7
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 18641,
+                "userDays": 11224,
+                "observedDays": 21,
+                "missingDays": 7
+              },
+              "learning_plan_start_click": {
+                "messages": 36917,
+                "userDays": 19427,
+                "observedDays": 25,
+                "missingDays": 3
+              },
+              "learning_plan_complete": {
+                "messages": 10624,
+                "userDays": 10201,
+                "observedDays": 19,
+                "missingDays": 9
+              },
+              "picture_book_start": {
+                "messages": 58626,
+                "userDays": 14864,
+                "observedDays": 27,
+                "missingDays": 1
+              },
+              "picture_book_complete": {
+                "messages": 26275,
+                "userDays": 8040,
+                "observedDays": 22,
+                "missingDays": 6
+              },
+              "article_read_complete": {
+                "messages": 4685,
+                "userDays": 2075,
+                "observedDays": 16,
+                "missingDays": 12
+              }
+            }
+          }
+        },
+        {
+          "id": "september",
+          "start": "2026-09-01",
+          "end": "2026-09-30",
+          "days": 30,
+          "activeUserDays": 188194,
+          "launchCount": 804442,
+          "newUsers": 17584,
+          "dailyNewUsers": 586.1333333333333,
+          "dailyActiveUsers": 6273.133333333333,
+          "dailyLaunches": 26814.733333333334,
+          "launchesPerActiveUserDay": 4.27453585130238,
+          "approxDailyUseMinutes": 15.58419937227896,
+          "retention": {
+            "d1": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 17584,
+              "retainedUsers": 8655,
+              "weightedRate": 0.4922088262056415
+            },
+            "d7": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 17584,
+              "retainedUsers": 4011,
+              "weightedRate": 0.22810509554140126
+            },
+            "d14": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 17584,
+              "retainedUsers": 2898,
+              "weightedRate": 0.16480891719745222
+            },
+            "d30": {
+              "cohorts": 18,
+              "cohortDates": 18,
+              "baseUsers": 11703,
+              "retainedUsers": 1352,
+              "weightedRate": 0.11552593352131932
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 188194,
+              "retainedUsers": 102170,
+              "weightedRate": 0.5428972230783128
+            },
+            "d7": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 188194,
+              "retainedUsers": 74102,
+              "weightedRate": 0.3937532546202323
+            },
+            "d14": {
+              "cohorts": 30,
+              "cohortDates": 30,
+              "baseUsers": 188194,
+              "retainedUsers": 64645,
+              "weightedRate": 0.34350191823331244
+            },
+            "d30": {
+              "cohorts": 18,
+              "cohortDates": 18,
+              "baseUsers": 111435,
+              "retainedUsers": 30399,
+              "weightedRate": 0.2727958002422937
+            }
+          },
+          "events": {
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": 104793,
+                "userDays": 56608,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 126187,
+                "userDays": 68076,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 20418,
+                "userDays": 15514,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 146845,
+                "userDays": 76084,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 28098,
+                "userDays": 23272,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 41888,
+                "userDays": 29270,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 142513,
+                "userDays": 85001,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 50057,
+                "userDays": 48050,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 254202,
+                "userDays": 63781,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 138135,
+                "userDays": 37706,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 15512,
+                "userDays": 7254,
+                "observedDays": 30,
+                "missingDays": 0
+              }
+            }
+          }
+        },
+        {
+          "id": "october",
+          "start": "2026-10-01",
+          "end": "2026-10-18",
+          "days": 18,
+          "activeUserDays": 105732,
+          "launchCount": 438087,
+          "newUsers": 5848,
+          "dailyNewUsers": 324.8888888888889,
+          "dailyActiveUsers": 5874.0,
+          "dailyLaunches": 24338.166666666668,
+          "launchesPerActiveUserDay": 4.143371921461809,
+          "approxDailyUseMinutes": 16.367916840061035,
+          "retention": {
+            "d1": {
+              "cohorts": 17,
+              "cohortDates": 17,
+              "baseUsers": 5348,
+              "retainedUsers": 2481,
+              "weightedRate": 0.46391174270755425
+            },
+            "d7": {
+              "cohorts": 11,
+              "cohortDates": 11,
+              "baseUsers": 3164,
+              "retainedUsers": 717,
+              "weightedRate": 0.2266118836915297
+            },
+            "d14": {
+              "cohorts": 4,
+              "cohortDates": 4,
+              "baseUsers": 1158,
+              "retainedUsers": 200,
+              "weightedRate": 0.17271157167530224
+            },
+            "d30": {
+              "cohorts": 0,
+              "cohortDates": 0,
+              "baseUsers": 0,
+              "retainedUsers": 0,
+              "weightedRate": null
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 17,
+              "cohortDates": 17,
+              "baseUsers": 99047,
+              "retainedUsers": 53323,
+              "weightedRate": 0.5383605762920634
+            },
+            "d7": {
+              "cohorts": 11,
+              "cohortDates": 11,
+              "baseUsers": 60793,
+              "retainedUsers": 25923,
+              "weightedRate": 0.4264142253219943
+            },
+            "d14": {
+              "cohorts": 4,
+              "cohortDates": 4,
+              "baseUsers": 20557,
+              "retainedUsers": 7700,
+              "weightedRate": 0.3745682735807754
+            },
+            "d30": {
+              "cohorts": 0,
+              "cohortDates": 0,
+              "baseUsers": 0,
+              "retainedUsers": 0,
+              "weightedRate": null
+            }
+          },
+          "events": {
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": 77948,
+                "userDays": 36140,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 79427,
+                "userDays": 40583,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 11397,
+                "userDays": 9189,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 101892,
+                "userDays": 47362,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 10238,
+                "userDays": 8709,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 20511,
+                "userDays": 14100,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 81360,
+                "userDays": 50638,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 32052,
+                "userDays": 30757,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 132226,
+                "userDays": 32250,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 70218,
+                "userDays": 18995,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 9177,
+                "userDays": 3726,
+                "observedDays": 18,
+                "missingDays": 0
+              }
+            }
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "id": "dailyActiveUsers",
+          "label": "日均活跃用户",
+          "unit": "人",
+          "before": 3299.0,
+          "after": 3978.1428571428573,
+          "relativeChange": 0.20586324860347305
+        },
+        {
+          "id": "dailyLaunches",
+          "label": "日均启动次数",
+          "unit": "次",
+          "before": 14305.214285714286,
+          "after": 18208.678571428572,
+          "relativeChange": 0.27287003240576624
+        },
+        {
+          "id": "launchesPerActiveUserDay",
+          "label": "每活跃用户日启动次数",
+          "unit": "次",
+          "before": 4.336227428225003,
+          "after": 4.577180665780874,
+          "relativeChange": 0.055567481536479946
+        }
+      ]
+    },
+    "combined": {
+      "windows": [
+        {
+          "id": "before",
+          "start": "2026-07-07",
+          "end": "2026-08-03",
+          "days": 28,
+          "activeUserDays": 366220,
+          "launchCount": 1075725,
+          "newUsers": 47075,
+          "dailyNewUsers": 1681.25,
+          "dailyActiveUsers": 13079.285714285714,
+          "dailyLaunches": 38418.75,
+          "launchesPerActiveUserDay": 2.9373737097919284,
+          "approxDailyUseMinutes": 17.30616318970382,
+          "retention": {
+            "d1": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 47075,
+              "retainedUsers": 21417,
+              "weightedRate": 0.4549548592671269
+            },
+            "d7": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 47075,
+              "retainedUsers": 9745,
+              "weightedRate": 0.20701009028146575
+            },
+            "d14": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 47075,
+              "retainedUsers": 7347,
+              "weightedRate": 0.15607010090281465
+            },
+            "d30": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 47075,
+              "retainedUsers": 5338,
+              "weightedRate": 0.1133935209771641
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 366220,
+              "retainedUsers": 197587,
+              "weightedRate": 0.5395308830757468
+            },
+            "d7": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 366220,
+              "retainedUsers": 143924,
+              "weightedRate": 0.392998743924417
+            },
+            "d14": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 366220,
+              "retainedUsers": 123758,
+              "weightedRate": 0.3379334826060838
+            },
+            "d30": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 366220,
+              "retainedUsers": 96568,
+              "weightedRate": 0.26368849325542026
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_map_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_achievement_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_catalog_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "learning_plan_start_click": {
+                "messages": 8,
+                "userDays": 2,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "learning_plan_complete": {
+                "messages": 6,
+                "userDays": 2,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "picture_book_start": {
+                "messages": 12,
+                "userDays": 3,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "picture_book_complete": {
+                "messages": 4,
+                "userDays": 2,
+                "observedDays": 1,
+                "missingDays": 27
+              },
+              "article_read_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              }
+            },
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_map_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_achievement_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "reading_cottage_catalog_view": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "learning_plan_start_click": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "learning_plan_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "picture_book_start": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "picture_book_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              },
+              "article_read_complete": {
+                "messages": null,
+                "userDays": null,
+                "observedDays": 0,
+                "missingDays": 28
+              }
+            }
+          }
+        },
+        {
+          "id": "after",
+          "start": "2026-08-04",
+          "end": "2026-08-31",
+          "days": 28,
+          "activeUserDays": 451770,
+          "launchCount": 1356472,
+          "newUsers": 39690,
+          "dailyNewUsers": 1417.5,
+          "dailyActiveUsers": 16134.642857142857,
+          "dailyLaunches": 48445.42857142857,
+          "launchesPerActiveUserDay": 3.002572105274808,
+          "approxDailyUseMinutes": 18.161764725413374,
+          "retention": {
+            "d1": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 39690,
+              "retainedUsers": 18632,
+              "weightedRate": 0.4694381456286218
+            },
+            "d7": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 39690,
+              "retainedUsers": 9005,
+              "weightedRate": 0.22688334593096499
+            },
+            "d14": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 39690,
+              "retainedUsers": 6804,
+              "weightedRate": 0.17142857142857143
+            },
+            "d30": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 39690,
+              "retainedUsers": 4893,
+              "weightedRate": 0.12328042328042328
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 451770,
+              "retainedUsers": 255546,
+              "weightedRate": 0.5656550899794143
+            },
+            "d7": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 451770,
+              "retainedUsers": 190022,
+              "weightedRate": 0.42061668548155035
+            },
+            "d14": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 451770,
+              "retainedUsers": 162622,
+              "weightedRate": 0.35996635456094916
+            },
+            "d30": {
+              "cohorts": 56,
+              "cohortDates": 28,
+              "baseUsers": 451770,
+              "retainedUsers": 125024,
+              "weightedRate": 0.27674259025610376
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": 193106,
+                "userDays": 85615,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 210864,
+                "userDays": 91045,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 40743,
+                "userDays": 25186,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 243889,
+                "userDays": 100957,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 59819,
+                "userDays": 42082,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 77700,
+                "userDays": 46081,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 215786,
+                "userDays": 103825,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 62963,
+                "userDays": 53421,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 322932,
+                "userDays": 72483,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 147735,
+                "userDays": 40731,
+                "observedDays": 28,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 25600,
+                "userDays": 10934,
+                "observedDays": 27,
+                "missingDays": 1
+              }
+            },
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": 38590,
+                "userDays": 17941,
+                "observedDays": 27,
+                "missingDays": 1
+              },
+              "reading_cottage_view": {
+                "messages": 43178,
+                "userDays": 18751,
+                "observedDays": 26,
+                "missingDays": 2
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 8941,
+                "userDays": 5261,
+                "observedDays": 16,
+                "missingDays": 12
+              },
+              "reading_cottage_map_view": {
+                "messages": 48999,
+                "userDays": 20787,
+                "observedDays": 27,
+                "missingDays": 1
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 15316,
+                "userDays": 10787,
+                "observedDays": 21,
+                "missingDays": 7
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 18641,
+                "userDays": 11224,
+                "observedDays": 21,
+                "missingDays": 7
+              },
+              "learning_plan_start_click": {
+                "messages": 36917,
+                "userDays": 19427,
+                "observedDays": 25,
+                "missingDays": 3
+              },
+              "learning_plan_complete": {
+                "messages": 10624,
+                "userDays": 10201,
+                "observedDays": 19,
+                "missingDays": 9
+              },
+              "picture_book_start": {
+                "messages": 58626,
+                "userDays": 14864,
+                "observedDays": 27,
+                "missingDays": 1
+              },
+              "picture_book_complete": {
+                "messages": 26275,
+                "userDays": 8040,
+                "observedDays": 22,
+                "missingDays": 6
+              },
+              "article_read_complete": {
+                "messages": 4685,
+                "userDays": 2075,
+                "observedDays": 16,
+                "missingDays": 12
+              }
+            }
+          }
+        },
+        {
+          "id": "september",
+          "start": "2026-09-01",
+          "end": "2026-09-30",
+          "days": 30,
+          "activeUserDays": 683528,
+          "launchCount": 1973592,
+          "newUsers": 58639,
+          "dailyNewUsers": 1954.6333333333334,
+          "dailyActiveUsers": 22784.266666666666,
+          "dailyLaunches": 65786.4,
+          "launchesPerActiveUserDay": 2.887360868903688,
+          "approxDailyUseMinutes": 15.914437472446874,
+          "retention": {
+            "d1": {
+              "cohorts": 60,
+              "cohortDates": 30,
+              "baseUsers": 58639,
+              "retainedUsers": 29002,
+              "weightedRate": 0.4945855147598015
+            },
+            "d7": {
+              "cohorts": 60,
+              "cohortDates": 30,
+              "baseUsers": 58639,
+              "retainedUsers": 13495,
+              "weightedRate": 0.23013693957946077
+            },
+            "d14": {
+              "cohorts": 60,
+              "cohortDates": 30,
+              "baseUsers": 58639,
+              "retainedUsers": 9913,
+              "weightedRate": 0.16905131397192993
+            },
+            "d30": {
+              "cohorts": 36,
+              "cohortDates": 18,
+              "baseUsers": 38938,
+              "retainedUsers": 4650,
+              "weightedRate": 0.11942061739175099
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 60,
+              "cohortDates": 30,
+              "baseUsers": 683528,
+              "retainedUsers": 373149,
+              "weightedRate": 0.5459161877787011
+            },
+            "d7": {
+              "cohorts": 60,
+              "cohortDates": 30,
+              "baseUsers": 683528,
+              "retainedUsers": 275432,
+              "weightedRate": 0.4029564260717922
+            },
+            "d14": {
+              "cohorts": 60,
+              "cohortDates": 30,
+              "baseUsers": 683528,
+              "retainedUsers": 240604,
+              "weightedRate": 0.3520031366674079
+            },
+            "d30": {
+              "cohorts": 36,
+              "cohortDates": 18,
+              "baseUsers": 407608,
+              "retainedUsers": 114198,
+              "weightedRate": 0.2801662381503798
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": 276108,
+                "userDays": 140889,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 335215,
+                "userDays": 162500,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 51696,
+                "userDays": 38028,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 379034,
+                "userDays": 181288,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 67894,
+                "userDays": 53112,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 100560,
+                "userDays": 66901,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 387114,
+                "userDays": 202819,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 129150,
+                "userDays": 108442,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 607958,
+                "userDays": 151729,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 349090,
+                "userDays": 93898,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 46004,
+                "userDays": 19454,
+                "observedDays": 30,
+                "missingDays": 0
+              }
+            },
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": 104793,
+                "userDays": 56608,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 126187,
+                "userDays": 68076,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 20418,
+                "userDays": 15514,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 146845,
+                "userDays": 76084,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 28098,
+                "userDays": 23272,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 41888,
+                "userDays": 29270,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 142513,
+                "userDays": 85001,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 50057,
+                "userDays": 48050,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 254202,
+                "userDays": 63781,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 138135,
+                "userDays": 37706,
+                "observedDays": 30,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 15512,
+                "userDays": 7254,
+                "observedDays": 30,
+                "missingDays": 0
+              }
+            }
+          }
+        },
+        {
+          "id": "october",
+          "start": "2026-10-01",
+          "end": "2026-10-18",
+          "days": 18,
+          "activeUserDays": 389699,
+          "launchCount": 1076166,
+          "newUsers": 20865,
+          "dailyNewUsers": 1159.1666666666667,
+          "dailyActiveUsers": 21649.944444444445,
+          "dailyLaunches": 59787.0,
+          "launchesPerActiveUserDay": 2.761531335723212,
+          "approxDailyUseMinutes": 16.836209869668643,
+          "retention": {
+            "d1": {
+              "cohorts": 34,
+              "cohortDates": 17,
+              "baseUsers": 19109,
+              "retainedUsers": 9103,
+              "weightedRate": 0.476372389973311
+            },
+            "d7": {
+              "cohorts": 22,
+              "cohortDates": 11,
+              "baseUsers": 11471,
+              "retainedUsers": 2772,
+              "weightedRate": 0.2416528637433528
+            },
+            "d14": {
+              "cohorts": 8,
+              "cohortDates": 4,
+              "baseUsers": 4156,
+              "retainedUsers": 727,
+              "weightedRate": 0.17492781520692974
+            },
+            "d30": {
+              "cohorts": 0,
+              "cohortDates": 0,
+              "baseUsers": 0,
+              "retainedUsers": 0,
+              "weightedRate": null
+            }
+          },
+          "activeRetention": {
+            "d1": {
+              "cohorts": 34,
+              "cohortDates": 17,
+              "baseUsers": 365051,
+              "retainedUsers": 198456,
+              "weightedRate": 0.5436391079602576
+            },
+            "d7": {
+              "cohorts": 22,
+              "cohortDates": 11,
+              "baseUsers": 224906,
+              "retainedUsers": 96966,
+              "weightedRate": 0.4311401207615626
+            },
+            "d14": {
+              "cohorts": 8,
+              "cohortDates": 4,
+              "baseUsers": 76141,
+              "retainedUsers": 28853,
+              "weightedRate": 0.3789417002666106
+            },
+            "d30": {
+              "cohorts": 0,
+              "cohortDates": 0,
+              "baseUsers": 0,
+              "retainedUsers": 0,
+              "weightedRate": null
+            }
+          },
+          "events": {
+            "Android": {
+              "reading_cottage_entry_click": {
+                "messages": 210725,
+                "userDays": 93648,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 218388,
+                "userDays": 102622,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 29742,
+                "userDays": 23714,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 271308,
+                "userDays": 118089,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 28313,
+                "userDays": 23102,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 54310,
+                "userDays": 35914,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 228764,
+                "userDays": 122965,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 85400,
+                "userDays": 70964,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 354313,
+                "userDays": 81964,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 202953,
+                "userDays": 52564,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 27025,
+                "userDays": 10667,
+                "observedDays": 18,
+                "missingDays": 0
+              }
+            },
+            "iOS": {
+              "reading_cottage_entry_click": {
+                "messages": 77948,
+                "userDays": 36140,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_view": {
+                "messages": 79427,
+                "userDays": 40583,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_go_reading_click": {
+                "messages": 11397,
+                "userDays": 9189,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_map_view": {
+                "messages": 101892,
+                "userDays": 47362,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_achievement_view": {
+                "messages": 10238,
+                "userDays": 8709,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "reading_cottage_catalog_view": {
+                "messages": 20511,
+                "userDays": 14100,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_start_click": {
+                "messages": 81360,
+                "userDays": 50638,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "learning_plan_complete": {
+                "messages": 32052,
+                "userDays": 30757,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_start": {
+                "messages": 132226,
+                "userDays": 32250,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "picture_book_complete": {
+                "messages": 70218,
+                "userDays": 18995,
+                "observedDays": 18,
+                "missingDays": 0
+              },
+              "article_read_complete": {
+                "messages": 9177,
+                "userDays": 3726,
+                "observedDays": 18,
+                "missingDays": 0
+              }
+            }
+          }
+        }
+      ],
+      "metrics": [
+        {
+          "id": "dailyActiveUsers",
+          "label": "日均活跃用户",
+          "unit": "人",
+          "before": 13079.285714285714,
+          "after": 16134.642857142857,
+          "relativeChange": 0.23360275244388617
+        },
+        {
+          "id": "dailyLaunches",
+          "label": "日均启动次数",
+          "unit": "次",
+          "before": 38418.75,
+          "after": 48445.42857142857,
+          "relativeChange": 0.2609839875432849
+        },
+        {
+          "id": "launchesPerActiveUserDay",
+          "label": "每活跃用户日启动次数",
+          "unit": "次",
+          "before": 2.9373737097919284,
+          "after": 3.002572105274808,
+          "relativeChange": 0.022196152728383378
+        }
+      ]
+    }
+  },
   "formulas": {
-    "dailyActiveUsers": "每日活跃用户数求和 / 17；和为用户日，不是期间去重人数",
-    "dailyLaunches": "17天启动次数求和 / 17",
-    "launchesPerActiveUserDay": "期间启动次数 / 期间活跃用户日",
-    "retention": "成熟cohort新增用户数加权留存率；原始百分比已四舍五入，结果为近似值"
+    "dailyActiveUsers": "双端每日活跃数之和 / 窗口自然日数；不按平台日行数除",
+    "dailyLaunches": "双端启动次数之和 / 窗口自然日数",
+    "launchesPerActiveUserDay": "启动次数总和 / 活跃用户日总和",
+    "retention": "成熟且非空批次的留存人数总和 / 同批次基数总和",
+    "approxDailyUseMinutes": "源报表每日平均日时长按活跃用户日加权；近似值"
   },
   "limitations": [
-    "两组各17天，但非随机对照实验；版本迁移、渠道投放、暑假周期及用户结构可能影响结果，不能将变化归因于单个功能。",
-    "全APP活跃及启动可同口径对比；上线前普通阅读事件导出只有表头，不能将缺失值视为0或声明阅读完成提升。",
-    "D7上线后仅10个成熟cohort；仅作为探索信号，不宣称已验证长期留存。",
-    "2026-08-04为历史分析后窗起点，已找到当日1.4.0小屋访问，尚未取得正式发版单来确认精确上线时间。"
+    "悦读没有 A/B 测试，前后变化不能归因于游戏化；单词拼读王的 A/B 为独立案例。",
+    "两端合计不作跨端去重；跨天独立用户数之和是用户日，不是期间人数。",
+    "事件是按日汇总，没有用户 ID、发生顺序或参数；不计算用户级漏斗转化率。",
+    "事件版本含 null，未完成渠道、版本、获客和活动控制。",
+    "7月7日至12日无事件源记录；测试事件剔除；缺失不补零。",
+    "留存截至10月17日批次，长期周期只使用成熟且非空数据；活跃留存批次间可重复用户。"
+  ],
+  "provenance": [
+    {
+      "file": "双端_事件明细_20260707_20261018.csv",
+      "rows": 6899,
+      "sha256": "fab595258cc5869154bc8faa0e7f281a6372ad2f108d4177c07de6ce691852f0"
+    },
+    {
+      "file": "双端_整体趋势_20260707_20261018.csv",
+      "rows": 208,
+      "sha256": "8b597fc812dd1aeeae0cbbe382d93d1127e801a448a8c7348135ce7f2c40d22f"
+    },
+    {
+      "file": "双端_新用户留存人数_20260707_20261018.csv",
+      "rows": 206,
+      "sha256": "f424da4817bdcb692db450294f59fc48ebb6fea0c9d3e79d6e39c7de9833fa0d"
+    },
+    {
+      "file": "双端_活跃用户留存人数_20260707_20261018.csv",
+      "rows": 206,
+      "sha256": "84fc9161b9d273c9f02d7daac1f5a4bb6ccb84b82a31e9849bcf8ac0da76ffdf"
+    }
   ]
 }

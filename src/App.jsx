@@ -390,11 +390,11 @@ function Impact() {
         english="DATA & DECISIONS"
         title="让数据，支持判断。"
       >
-        悦读小达人 · 游戏化迭代前后观察窗
+        悦读小达人 · 游戏化上线前后观察
       </SectionHeading>
       <div className="impact-layout" data-reveal>
         <div className="impact-context">
-          <span className="context-label">Android / 全 APP / 各 17 天</span>
+          <span className="context-label">Android + iOS / 全 APP / 各 28 天</span>
           <h3>
             增长来自哪里？
             <br />
@@ -405,17 +405,17 @@ function Impact() {
           </p>
           <div className="date-windows">
             <div>
-              <span>观察前窗</span>
-              <strong>07.18 — 08.03</strong>
+              <span>上线前</span>
+              <strong>07.07 — 08.03</strong>
             </div>
             <ArrowRight size={20} />
             <div>
-              <span>观察后窗</span>
-              <strong>08.04 — 08.20</strong>
+              <span>上线后</span>
+              <strong>08.04 — 08.31</strong>
             </div>
           </div>
           <small>
-            2026 年 · 08.04 为历史分析后窗起点，精确发版时间尚未确认。
+            2026 年 · 08.04 正式上线，由本人确认。双端统计合计，未跨端去重。
           </small>
         </div>
         <div className="metric-panel">
@@ -450,8 +450,8 @@ function Impact() {
               </strong>
             </div>
             {[
-              ["前窗", active.before, "before"],
-              ["后窗", active.after, "after"],
+              ["上线前", active.before, "before"],
+              ["上线后", active.after, "after"],
             ].map(([label, value, className]) => (
               <div className="bar-row" key={label}>
                 <span>{label}</span>
@@ -467,20 +467,17 @@ function Impact() {
             <p className="metric-formula">
               {selected === 2
                 ? "窗口总启动次数 ÷ 活跃用户日总和；活跃用户日不是期间去重人数。"
-                : `各窗口每日${selected === 0 ? "活跃用户" : "启动次数"}求和 ÷ 17 天。`}
+                : `各窗口双端每日${selected === 0 ? "活跃用户" : "启动次数"}求和 ÷ 28 个自然日。`}
             </p>
           </div>
         </div>
       </div>
       <div className="data-takeaways" data-reveal>
-        {[
-          ["+17.08%", "日均活跃用户"],
-          ["+19.04%", "日均启动次数"],
-          ["+1.68%", "每活跃用户日启动次数"],
-        ].map(([value, label]) => (
-          <div key={label}>
-            <em>{value}</em>
-            <span>{label}</span>
+        {/* 结论卡与指标图共用新报表聚合值，避免文案保留旧口径。 */}
+        {metrics.metrics.map((metric) => (
+          <div key={metric.id}>
+            <em>+{(metric.relativeChange * 100).toFixed(2)}%</em>
+            <span>{metric.label}</span>
           </div>
         ))}
       </div>
@@ -488,14 +485,13 @@ function Impact() {
         <div>
           <h3>观察 ≠ 因果</h3>
           <p>
-            这组数据支持“后窗规模增长、人均频次变化较小”的判断。没有随机对照，不能把增长直接归因于游戏化；渠道、假期和版本迁移都可能影响结果。
+            上线后活跃规模扩大，人均启动频次增幅较小。同期新增用户减少 15.69%，新用户 D7 留存从 20.70% 到 22.69%（+1.99 个百分点）。悦读当时没有 A/B 测试，不能把变化直接归因于游戏化；渠道、假期和版本都可能影响结果。
           </p>
         </div>
         <div>
           <h3>下一步验证什么</h3>
           <p>
-            限定具备小屋功能的版本，按入口触达 → 小屋参与 → 去阅读 →
-            阅读完成建漏斗，并结合成熟留存 cohort 验证长期价值。
+            先核对 iOS 埋点：首个 28 天的“去阅读点击”只有 16 天记录。补齐版本、用户标识和事件顺序后，再验证入口触达 → 小屋参与 → 去阅读 → 阅读完成，检查激励是否回到学习。
           </p>
         </div>
       </div>
@@ -505,13 +501,11 @@ function Impact() {
         </summary>
         <div>
           <p>
-            来源：友盟历史离线导出，本轮独立重算（2026.10.19）。前窗 173,367
-            活跃用户日 / 427,148 次启动；后窗 202,981 活跃用户日 / 508,489
-            次启动。
+            来源：2026.10.19 友盟后台新导出的 Android、iOS 数据，2026.10.20 重算。
+            上线前 366,220 活跃用户日 / 1,075,725 次启动；上线后 451,770 活跃用户日 / 1,356,472 次启动。22 张原始 CSV 与 4 张合并表逐字段对账；原始表仅保存在本机。
           </p>
           <p>
-            前窗普通阅读完成、去阅读点击导出只有表头，不能将缺失视为 0
-            或声称阅读完成提升。留存前后成熟 cohort 数量不同，仅保留为探索信号。
+            两端分别保留：Android 日均活跃 +24.30%，iOS +20.59%。新用户留存按成熟批次人数加权，D1 / D7 / D14 / D30 前后每端均为 28 个完整批次。事件为日汇总，独立用户跨天之和是用户日；缺失不补零，不能据此计算用户级漏斗。单词拼读王的 A/B 测试是另一案例。
           </p>
           <a
             href={asset("yuedu-metrics.json")}

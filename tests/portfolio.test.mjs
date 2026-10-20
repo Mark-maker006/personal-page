@@ -48,7 +48,7 @@ test("作品集的主题、项目阅读、数据切换与移动端访问", async
         .getAttribute("aria-selected"),
       "true",
     );
-    assert.match(await page.getByRole("tabpanel").innerText(), /29,911/);
+    assert.match(await page.getByRole("tabpanel").innerText(), /48,445/);
     assert.match(await page.locator("#impact").innerText(), /不能.*归因/);
   });
   await t.test("研究画廊标明竞品来源并能进入真实交互 Demo", async () => {

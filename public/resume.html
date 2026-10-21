@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Mark 的产品经理与产品设计简历：教育产品游戏化、竞品研究与 Agent 工作流实践。" />
-  <title>Mark · 产品经理 / 产品设计简历</title>
+  <title>Mark · 产品经理 / 产品实习 / 产品设计简历</title>
   <style>
     /* 拉丁字母和数字优先使用 Times New Roman，中文交给苹方与系统中文字体。 */
     @font-face { font-family: 'Resume Latin'; src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Times'); font-style: normal; font-weight: 100 900; unicode-range: U+0000-024F, U+1E00-1EFF; }
@@ -16,7 +16,10 @@
     a:hover { color: var(--accent); }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
     .page { width: min(960px, calc(100% - 40px)); margin: 32px auto; padding: 48px 52px; background: #fff; border: 1px solid var(--line); border-radius: 24px; }
-    header { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-bottom: 24px; border-bottom: 2px solid var(--ink); }
+    /* 头像与姓名组成独立区域，后续替换照片时保持正文排版稳定。 */
+    .identity { display: flex; align-items: center; gap: 18px; min-width: 0; }
+    .portrait { display: block; width: 80px; height: 80px; flex-shrink: 0; object-fit: cover; border-radius: 14px; }
     h1 { margin: 0 0 4px; font-size: 48px; font-weight: 500; line-height: 1; }
     .role { color: var(--accent); font-weight: 600; }
     .contact { display: grid; gap: 3px; color: var(--muted); text-align: right; font-size: 12px; }
@@ -49,6 +52,8 @@
       body { background: #fff; font-size: 12px; line-height: 1.65; }
       .page { width: 100%; margin: 0; padding: 0; border: 0; border-radius: 0; }
       header { padding-bottom: 15px; }
+      .identity { gap: 14px; }
+      .portrait { width: 64px; height: 64px; border-radius: 10px; }
       h1 { font-size: 34px; }
       h2 { font-size: 12px; margin-bottom: 9px; }
       h3 { font-size: 14px; }
@@ -66,6 +71,9 @@
     @media screen and (max-width: 720px) {
       .page { width: calc(100% - 24px); margin: 12px auto 80px; padding: 30px 22px; border-radius: 20px; }
       header { display: block; }
+      .identity { gap: 14px; }
+      .portrait { width: 64px; height: 64px; }
+      .role { font-size: 12px; }
       .contact { margin-top: 18px; text-align: left; }
       main { display: block; padding-top: 24px; }
       h1 { font-size: 42px; }
@@ -75,9 +83,12 @@
 <body>
   <article class="page">
     <header>
-      <div><h1>Mark</h1><div class="role">产品经理 / 产品设计</div></div>
+      <div class="identity">
+        <img class="portrait" src="assets/mark-portrait.webp" width="256" height="256" alt="Mark 的插画头像" />
+        <div><h1>Mark</h1><div class="role">产品经理 / 产品实习 / 产品设计</div></div>
+      </div>
       <div class="contact">
-        <span>教育产品 · 交互原型 · AI 工作流</span>
+        <span>产品原型 · AI 工作流</span>
         <a href="https://github.com/Mark-maker006">github.com/Mark-maker006</a>
         <a href="https://mark-maker006.github.io/personal-page/">mark-maker006.github.io/personal-page</a>
       </div>

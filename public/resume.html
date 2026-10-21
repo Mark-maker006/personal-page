@@ -30,6 +30,9 @@
     h3 { margin: 3px 0 0; font-size: 17px; font-weight: 600; line-height: 1.5; }
     p { margin: 6px 0 0; color: var(--muted); }
     .summary { color: var(--ink); }
+    /* 教育信息尚待补充，用稳定的两行占位预留院校、专业和就读时间。 */
+    .education { padding-bottom: 16px; border-bottom: 1px solid var(--line); break-inside: avoid; }
+    .education h3 { color: var(--muted); font-weight: 500; }
     .item { padding: 0 0 17px; margin-bottom: 17px; border-bottom: 1px solid var(--line); break-inside: avoid; }
     .item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
     .meta { color: var(--muted); font-size: 12px; }
@@ -133,9 +136,23 @@
               <li>设计长任务恢复、透明度检查及三类动画验收，形成插件初版与短预览；跨素材稳定性和效率收益待验证。</li>
             </ul>
           </div>
+          <div class="item">
+            <div class="meta">自动化播客 · AI 探索与实践</div>
+            <h3>搭建从新闻采集到音频发布的工作流</h3>
+            <ul>
+              <li>围绕《灵动比泽》，串联 RSS 新闻采集、AI 口播改写、语音合成、背景混音与 OSS / RSS 发布，搭建自动化内容生产链路。</li>
+              <li>迭代选题、来源归属与开场收尾规则，排查稿件截断和人声淡出问题，持续完善生成质量与听感验收。</li>
+            </ul>
+          </div>
         </section>
       </div>
       <aside>
+        <section class="education" aria-labelledby="education-title">
+          <h2 id="education-title">教育经历 <span>Education</span></h2>
+          <h3>院校名称 · 待补充</h3>
+          <p>专业 / 学历 · 待补充</p>
+          <p class="meta">就读时间：YYYY.MM - YYYY.MM</p>
+        </section>
         <section aria-labelledby="data-title">
           <h2 id="data-title">数据观察 <span>Before / After</span></h2>
           <div class="note">

@@ -595,7 +595,7 @@ export default function App() {
               english="SELECTED WORK"
               title="把想法，推进到可验证的作品。"
             >
-              三个真实项目，三种产品问题。
+              两款负责的教育产品，以及研究与 Agent 工作流实践。
             </SectionHeading>
             <div className="project-grid">
               {projects.map((item, i) => (

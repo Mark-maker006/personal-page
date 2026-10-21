@@ -51,6 +51,20 @@ test("作品集的主题、项目阅读、数据切换与移动端访问", async
     assert.match(await page.getByRole("tabpanel").innerText(), /48,445/);
     assert.match(await page.locator("#impact").innerText(), /不能.*归因/);
   });
+  await t.test("单词拼读王作为独立案例可阅读且来源可访问", async () => {
+    await page.getByRole("button", { name: "查看单词拼读王项目" }).click({ timeout: 2000 });
+    const dialog = page.getByRole("dialog");
+    assert.match(await dialog.innerText(), /素材产能/);
+    assert.match(await dialog.innerText(), /A\/B/);
+    await dialog.getByRole("button", { name: /猫咪上新/ }).click();
+    await dialog.locator(".gallery img").evaluate((image) => image.decode());
+    assert.match(await dialog.locator(".gallery img").getAttribute("alt"), /风格探索/);
+    const notes = await dialog.getByRole("link", { name: "查看项目说明" }).getAttribute("href");
+    const response = await page.request.get(new URL(notes, page.url()).href);
+    assert.equal(response.status(), 200);
+    assert.match(await response.text(), /单词拼读王/);
+    await page.keyboard.press("Escape");
+  });
   await t.test("研究画廊标明竞品来源并能进入真实交互 Demo", async () => {
     await page
       .getByRole("button", { name: "查看从竞品观察到产品判断项目" })

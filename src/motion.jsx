@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 export function useReducedMotion() {
   const [reduced, setReduced] = useState(
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
@@ -22,17 +22,12 @@ export function usePageMotion(reduced) {
         "--progress",
         range > 0 ? String(scrollY / range) : "0",
       );
-      root.style.setProperty(
-        "--parallax",
-        reduced ? "0px" : `${Math.min(scrollY * 0.055, 28)}px`,
-      );
     };
     const scroll = () => {
       if (!frame) frame = requestAnimationFrame(update);
     };
     update();
     addEventListener("scroll", scroll, { passive: true });
-    // 只在有观察器且允许动态时隐藏，正文保留可读降级方案。
     const observer =
       !reduced && "IntersectionObserver" in window
         ? new IntersectionObserver(
@@ -60,7 +55,6 @@ export function usePageMotion(reduced) {
     };
   }, [reduced]);
 }
-// 鼠标反馈限制为小幅度；触摸屏与减少动态模式使用静态布局。
 export function trackPointer(event, reduced) {
   if (reduced || event.pointerType !== "mouse") return;
   const node = event.currentTarget,
@@ -76,20 +70,31 @@ export function resetPointer(event) {
   event.currentTarget.style.setProperty("--rx", "0deg");
   event.currentTarget.style.setProperty("--ry", "0deg");
 }
-export function ParticleField({ reduced }) {
-  if (reduced) return null;
-  return (
-    <div className="particle-field" aria-hidden="true">
-      {Array.from({ length: 14 }, (_, i) => (
-        <i
-          key={i}
-          style={{
-            "--i": i,
-            left: `${(i * 37 + 7) % 100}%`,
-            top: `${(i * 19 + 5) % 100}%`,
-          }}
-        />
-      ))}
-    </div>
-  );
+/* 数字计数器：进入视口时从0滚动到目标值 */
+export function useCountUp(target, duration = 900, decimals = 2) {
+  const [value, setValue] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          setValue(+(eased * target).toFixed(decimals));
+          if (p < 1) requestAnimationFrame(tick);
+          else setValue(target);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.5 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [target, duration, decimals]);
+  return [value, ref];
 }

@@ -5,6 +5,7 @@ export const projects = [
   {
     id: "reading",
     number: "01",
+    color: "#3ee8ff",
     title: "悦读小达人",
     category: "Product strategy / Gamification",
     subtitle: "让一次阅读，成为下一次的期待。",
@@ -17,7 +18,7 @@ export const projects = [
       ["yuedu-navigation.webp", "底部导航 · 方案对比"],
     ],
     context:
-      "儿童阅读产品的激励不能只增加热闹，还要让孩子理解“为什么阅读、读完获得什么、奖励如何使用”。",
+      `儿童阅读产品的激励不能只增加热闹，还要让孩子理解"为什么阅读、读完获得什么、奖励如何使用"。`,
     decision:
       "收敛到空间装扮的反馈闭环，区分今日学习收获与长期可消费星币，明确任务容量、物品状态和奖励边界。",
     verification:
@@ -42,6 +43,7 @@ export const projects = [
   {
     id: "phonics",
     number: "02",
+    color: "#ffb547",
     title: "单词拼读王",
     category: "Learning experience / Pet companion",
     subtitle: "让宠物的回应，回到学习发生的时刻。",
@@ -78,6 +80,7 @@ export const projects = [
   {
     id: "research",
     number: "03",
+    color: "#9b7bff",
     title: "从竞品观察到产品判断",
     category: "Research / Product decisions",
     subtitle: "让每一个结论，都有来处。",
@@ -91,7 +94,7 @@ export const projects = [
     context:
       "功能罗列和成堆截图很难回答产品经理最关心的问题：我方究竟应该借鉴什么，又应该放弃什么？",
     decision:
-      "按游客、非会员、会员等状态拆解实际路径，将“证据 → 机制 → 我方借鉴边界 → 验证指标”放在同一阅读单元。",
+      `按游客、非会员、会员等状态拆解实际路径，将"证据 → 机制 → 我方借鉴边界 → 验证指标"放在同一阅读单元。`,
     verification:
       "用实机截图、市场地图与路径图回查结论；对没有完成的深测明确标记，避免以推测补齐功能。",
     challenges: [
@@ -114,6 +117,7 @@ export const projects = [
   {
     id: "agent",
     number: "04",
+    color: "#ff4fa8",
     title: "Agent 动画工作流",
     category: "AI workflow / Creative tooling",
     subtitle: "把一次次失败，变成下一次的工具。",
@@ -168,4 +172,50 @@ export const methods = [
     "回到现场验证",
     "核对数据口径、实机路径和回归结果，为下一轮留下证据。",
   ],
+];
+
+// 实习经历
+export const experience = {
+  company: "杭州雪梨教育",
+  role: "产品实习生",
+  period: "2025 — 2026",
+  desc: "负责悦读小达人游戏化机制设计与原型迭代，推进单词拼读王宠物伴学体验；参与竞品研究、数据验收与 PRD 对齐，全程与研发、设计协同交付。",
+};
+
+// 教育信息
+export const education = {
+  school: "燕山大学",
+  degree: "硕士 · 设计学",
+  period: "2025.09 — 2027.06（预计）",
+};
+
+// 技能标签：按相关性分组
+export const skills = [
+  // 产品核心
+  { label: "产品需求", group: "product" },
+  { label: "信息架构", group: "product" },
+  { label: "交互原型", group: "product" },
+  { label: "用户研究", group: "product" },
+  { label: "竞品分析", group: "product" },
+  { label: "数据分析", group: "product" },
+  // 设计 & 工具
+  { label: "Figma", group: "tool" },
+  { label: "HTML / CSS", group: "tool" },
+  { label: "React", group: "tool" },
+  { label: "Agent workflow", group: "tool" },
+  // 探索
+  { label: "自动化播客", group: "side" },
+  { label: "ESP32 硬件", group: "side" },
+];
+
+// 侧边项目（包装后）
+export const sideProjects = [
+  {
+    title: "自动化播客工作流",
+    desc: "串联 RSS 采集、AI 改写、语音合成、背景混音与 OSS 发布，实现从新闻到音频的全链路自动化。",
+  },
+  {
+    title: "ESP32 硬件交互探索",
+    desc: "基于 ESP32 开发板搭建小型交互装置，探索嵌入式端与软件产品之间的体验边界。",
+  },
 ];

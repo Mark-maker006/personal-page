@@ -33,10 +33,23 @@ if (!existsSync(contactFile)) {
   console.log('已生成 private/contact.json 模板，填写后重新运行即可导出投递版。');
 } else {
   const contact = JSON.parse(await readFile(contactFile, 'utf8'));
-  await page.evaluate(({ name, phone, email }) => {
+  // 本人照片：放在 private/photo.jpg（或 .jpeg / .png / .webp）；没有时投递版沿用插画头像
+  const photoExt = { jpg: 'jpeg', jpeg: 'jpeg', png: 'png', webp: 'webp' };
+  const photoName = Object.keys(photoExt).map((ext) => `photo.${ext}`).find((f) => existsSync(path.join(privateDir, f)));
+  const photo = photoName
+    ? `data:image/${photoExt[photoName.split('.')[1]]};base64,${(await readFile(path.join(privateDir, photoName))).toString('base64')}`
+    : '';
+  if (!photoName) console.log('未找到 private/photo.jpg，投递版沿用插画头像。');
+  await page.evaluate(async ({ name, phone, email, photo }) => {
     document.querySelector('[data-private="name"]').textContent = name || '';
     document.querySelector('[data-private="contact"]').textContent = [phone, email].filter(Boolean).join(' · ');
-  }, contact);
+    if (photo) {
+      const img = document.querySelector('[data-private="photo"]');
+      img.src = photo;
+      img.alt = '本人照片';
+      await img.decode();
+    }
+  }, { ...contact, photo });
   await exportPdf(page, privatePdf);
 }
 

@@ -50,7 +50,7 @@
     .metric dd { margin: 0; color: var(--accent); font-size: 25px; line-height: 1.1; white-space: nowrap; }
     .caption { margin-top: 11px; font-size: 11px; line-height: 1.65; }
     /* 私密字段只在本地导出投递版时由 scripts/export-resume.mjs 注入，公开页面保持为空。 */
-    [data-private]:empty { display: none; }
+    span[data-private]:empty { display: none; }
     .compact b { color: var(--ink); font-weight: 600; }
     .print { position: fixed; right: 20px; bottom: 20px; padding: 10px 16px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; cursor: pointer; }
     /* A4 打印保留两栏并隐藏控件，避免边框和留白挤占简历内容。 */
@@ -91,7 +91,7 @@
   <article class="page">
     <header>
       <div class="identity">
-        <img class="portrait" src="assets/mark-portrait.webp" width="256" height="256" alt="Mark 的插画头像" />
+        <img class="portrait" data-private="photo" src="assets/mark-portrait.webp" width="256" height="256" alt="Mark 的插画头像" />
         <div><h1><span data-private="name"></span> Mark</h1><div class="role">2027 届 · AI 产品经理（校招 / 实习）</div></div>
       </div>
       <div class="contact">
@@ -165,7 +165,7 @@
               <div class="metric"><dt>日均启动次数</dt><dd>+26.10%</dd></div>
               <div class="metric"><dt>新用户 D7 留存</dt><dd>+1.99pp</dd></div>
             </dl>
-            <p class="caption">友盟双端报表，上线前后各 28 天（2026.07.07—08.03 vs 08.04—08.31）；D7 留存 20.70% → 22.69%。</p>
+            <p class="caption">友盟双端，上线前后各 28 天对比；D7 留存 20.70% → 22.69%。</p>
           </div>
         </section>
         <section aria-labelledby="side-title">
@@ -178,7 +178,7 @@
         </section>
         <section aria-labelledby="tool-title">
           <h2 id="tool-title">工具 <span>Toolkit</span></h2>
-          <div class="skills"><span>Codex</span><span>Claude</span><span>Cursor</span><span>Agent 工作流</span><span>React</span><span>HTML / CSS</span><span>Figma</span><span>友盟</span><span>ADB</span><span>PRD / 原型</span></div>
+          <div class="skills"><span>Codex / Claude / Cursor</span><span>Agent 工作流</span><span>React / HTML / CSS</span><span>Figma（原型 / 流程图 / 状态图）</span><span>友盟</span><span>PRD</span></div>
         </section>
       </aside>
     </main>

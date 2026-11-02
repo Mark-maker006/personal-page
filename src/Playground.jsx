@@ -1,12 +1,69 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Play, RotateCcw } from "lucide-react";
+import { asset, projects } from "./content";
 
 // 每个项目场景里一个十秒内能玩完的小交互，内容都来自项目本身的材料。
 // 需要和背景光丝联动时，发一个 multiverse:pulse 事件，让该项目的那条光丝跑一道亮脉冲。
-const pulse = (strand, duration = 2.4) =>
-  window.dispatchEvent(new CustomEvent("multiverse:pulse", { detail: { strand, duration } }));
+// 脉络序号就是项目在 projects 里的位置，按 id 查，调整项目顺序时不用改这里
+const pulse = (id, duration = 2.4) =>
+  window.dispatchEvent(
+    new CustomEvent("multiverse:pulse", {
+      detail: { strand: projects.findIndex((p) => p.id === id), duration },
+    }),
+  );
 
 const lerp = (a, b, t) => a + (b - a) * t;
+
+// ---------- 素材工作台：同一件素材的四种交付状态，切换查看（第三关 3-07 实际导出） ----------
+const STATES = [
+  ["color", "彩色", "已购买、摆进房间"],
+  ["gray", "灰图", "未解锁时的预览"],
+  ["outline", "虚线", "摆放位置提示"],
+  ["ghost", "幽灵", "待购买的占位"],
+];
+
+function WorkbenchPlay() {
+  const [state, setState] = useState(0);
+  const pick = (i) => {
+    setState(i);
+    if (i === STATES.length - 1) pulse("workbench", 2);
+  };
+  return (
+    <div className="play play-workbench">
+      <div className="workbench-stage">
+        {STATES.map(([key, label], i) => (
+          <img
+            key={key}
+            src={asset(`workbench-state-${key}.webp`)}
+            alt={i === state ? `复古小印刷机 · ${label}状态` : ""}
+            className={i === state ? "is-shown" : ""}
+            width="360"
+            height="247"
+          />
+        ))}
+      </div>
+      <div className="workbench-states" role="group" aria-label="切换素材状态">
+        {STATES.map(([key, label], i) => (
+          <button
+            key={key}
+            type="button"
+            aria-pressed={i === state}
+            onPointerEnter={(e) => e.pointerType === "mouse" && pick(i)}
+            onClick={() => pick(i)}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="play-readout" aria-live="polite">
+        <strong>
+          {STATES[state][1]} · {STATES[state][2]}
+        </strong>
+        <span>一次生成，自动导出四种状态，共用同一个位置</span>
+      </div>
+    </div>
+  );
+}
 
 // ---------- 悦读小达人：上线前后 28 天的观察数据（public/assets/cases/yuedu-metrics.json） ----------
 const RETENTION = [
@@ -72,7 +129,7 @@ function PhonicsPlay() {
     if (placed.includes(i)) return;
     const next = [...placed, i];
     setPlaced(next);
-    if (next.length === LETTERS.length) pulse(1, 2);
+    if (next.length === LETTERS.length) pulse("phonics", 2);
   };
   return (
     <div className={`play play-phonics ${done ? "is-done" : ""}`}>
@@ -192,7 +249,7 @@ function AgentPlay({ reduced }) {
   useEffect(() => () => clearInterval(timer.current), []);
   const run = () => {
     clearInterval(timer.current);
-    pulse(3, reduced ? 0.01 : 2.6);
+    pulse("agent", reduced ? 0.01 : 2.6);
     if (reduced) {
       setStep(STEPS.length);
       return;
@@ -226,6 +283,8 @@ function AgentPlay({ reduced }) {
 
 export function ProjectPlay({ project, reduced }) {
   switch (project.id) {
+    case "workbench":
+      return <WorkbenchPlay />;
     case "reading":
       return <ReadingPlay />;
     case "phonics":

@@ -1840,7 +1840,49 @@ nav a:hover:after {
 .agent-steps li.is-done {
   color: var(--strand);
 }
+/* 素材工作台：同一件素材的四种状态叠在同一位置，切换时交叉淡入 */
+.workbench-stage {
+  position: relative;
+  height: 128px;
+}
+.workbench-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.workbench-stage img.is-shown {
+  opacity: 1;
+}
+.workbench-states {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+.workbench-states button {
+  min-height: 30px;
+  border: 1px solid #ffffff26;
+  border-radius: 8px;
+  color: #a7a7ae;
+  font-size: 12px;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+.workbench-states button[aria-pressed="true"] {
+  border-color: var(--line);
+  color: #fff;
+  background: color-mix(in srgb, var(--strand) 16%, transparent);
+}
 @media (max-width: 720px) {
+  .workbench-stage {
+    height: 84px;
+  }
   .play {
     margin-bottom: 16px;
     padding: 10px 12px;

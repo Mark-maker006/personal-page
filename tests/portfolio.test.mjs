@@ -82,7 +82,7 @@ test("单屏场景式作品集：滚动切换、浮层详情、直达链接与�
     const L = await sceneLen(page);
     await page.getByRole("button", { name: "跳到：联系" }).click();
     await waitForScene(page, "联系");
-    await settledAt(page, 11);
+    await settledAt(page, 12);
     await page.mouse.wheel(0, L * 0.7);
     await page.waitForTimeout(150);
     // 越过结尾后滚动位置平移一整圈，停在真正的开头
@@ -90,7 +90,7 @@ test("单屏场景式作品集：滚动切换、浮层详情、直达链接与�
     await waitForScene(page, "开始");
     await page.mouse.wheel(0, -L * 0.7);
     await page.waitForTimeout(150);
-    await settledAt(page, 11);
+    await settledAt(page, 12);
     await waitForScene(page, "联系");
     await page.getByRole("button", { name: "回到起点" }).click();
     await settledAt(page, 0);
@@ -100,25 +100,27 @@ test("单屏场景式作品集：滚动切换、浮层详情、直达链接与�
   await t.test("场景导航点与首屏分支节点都能直达对应项目", async () => {
     await page.getByRole("button", { name: "跳到：单词拼读王" }).click();
     await waitForScene(page, "单词拼读王");
-    await page.getByRole("button", { name: "跳到：四个宇宙" }).click();
-    await waitForScene(page, "四个宇宙");
-    // WebGL 可用时，四个宇宙节点长好后可以聚焦和点击
-    if ((await page.locator(".universe-node").count()) === 4) {
-      const node = page.getByRole("button", { name: /悦读小达人：第 01 号宇宙/ });
+    await page.getByRole("button", { name: "跳到：五个宇宙" }).click();
+    await waitForScene(page, "五个宇宙");
+    // WebGL 可用时，五个宇宙节点长好后可以聚焦和点击
+    if ((await page.locator(".universe-node").count()) === 5) {
+      const node = page.getByRole("button", { name: /素材生产工作台：第 01 号宇宙/ });
       await page.waitForFunction(
         () => document.querySelector(".universe-node")?.getAttribute("tabindex") === "0",
         null,
         { timeout: 5000 },
       );
-      await node.click();
-      await waitForScene(page, "悦读小达人");
+      // 顶部节点随镜头缓动有亚像素漂移，用键盘聚焦 + 回车触发，同时覆盖键盘可达
+      await node.focus();
+      await page.keyboard.press("Enter");
+      await waitForScene(page, "素材工作台");
     }
   });
 
   await t.test("详情以浮层打开，关闭后仍停在原来的场景", async () => {
     await page.getByRole("button", { name: "跳到：单词拼读王" }).click();
     await waitForScene(page, "单词拼读王");
-    await settledAt(page, 4);
+    await settledAt(page, 5);
     const before = await page.evaluate(() => window.scrollY);
     const opener = page.getByRole("button", { name: "查看单词拼读王项目" });
     await opener.click();

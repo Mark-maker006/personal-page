@@ -1,5 +1,6 @@
 // 导出简历 PDF：公开版不含私密信息；投递版在本地注入 private/contact.json 中的姓名与联系方式。
 // 私密文件已被 .gitignore 排除，本脚本只输出文件路径，不打印任何私密字段的值。
+/* global console, document */
 import { chromium } from 'playwright';
 import { copyFile, mkdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';

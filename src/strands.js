@@ -9,6 +9,19 @@ export const TRUNK_TONES = { gold: "#ffd8a1", cold: "#d6ecff" };
 export const SEPARATE_Y = 1.2;
 
 export const strandPaths = {
+  // 素材工作台：从正中笔直向上，终点在最高处，居于两条中间分支之间
+  workbench: {
+    points: [
+      [0, -5, 0.05],
+      [0.25, -3.6, 0.15],
+      [-0.25, -2.2, -0.05],
+      [0.2, -0.8, -0.35],
+      [0, 0.6, 0.15],
+      [0.15, 2.2, 0.1],
+      [0.05, 4.3, 0.15],
+      [0, 6, 0.2],
+    ],
+  },
   reading: {
     points: [
       [-0.25, -5, 0.1],
@@ -58,3 +71,6 @@ export const strandPaths = {
     ],
   },
 };
+
+// 脉络条数：形态纹理的行数、着色器里的逐条强调都按它展开
+export const STRAND_COUNT = Object.keys(strandPaths).length;

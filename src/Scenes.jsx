@@ -7,14 +7,14 @@ import { ProjectPlay, scramble, Words } from "./Playground";
 const MultiverseScene = lazy(() => import("./MultiverseScene.jsx"));
 
 const resume = `${import.meta.env.BASE_URL}resume.html`;
-const shortTitle = { reading: "悦读小达人", phonics: "单词拼读王", research: "竞品研究", agent: "Agent 工作流" };
+const shortTitle = { workbench: "素材工作台", reading: "悦读小达人", phonics: "单词拼读王", research: "竞品研究", agent: "Agent 工作流" };
 
 // 首页的全部"场景"。页面不再是一条长文档：滚动只推进场景序号，
 // 内容在固定的舞台上切换，背景的 3D 脉络随序号连续变化。
 export const SCENES = [
   { key: "hero", type: "hero", label: "开始", anchor: "top" },
   { key: "bundle", type: "bundle", label: "交织" },
-  { key: "overview", type: "overview", label: "四个宇宙", anchor: "work" },
+  { key: "overview", type: "overview", label: "五个宇宙", anchor: "work" },
   ...projects.map((p, i) => ({ key: p.id, type: "project", project: i, label: shortTitle[p.id] })),
   { key: "experience", type: "about", about: 0, label: "经历", anchor: "about" },
   { key: "methods", type: "about", about: 1, label: "方法" },
@@ -80,7 +80,7 @@ function BundlePanel() {
       </p>
       <h2>所有项目，都从同一个问题出发。</h2>
       <p className="scene-text">
-        <Words text="怎样把复杂的东西，变成用户看得懂、用得上的体验。接下来的四条线，是这个问题在不同产品里的四种回答。" />
+        <Words text="怎样把复杂的东西，变成用户看得懂、用得上的体验。接下来的五条线，是这个问题在不同产品里的五种回答。" />
       </p>
     </div>
   );
@@ -90,11 +90,11 @@ function OverviewPanel() {
   return (
     <div className="scene-copy">
       <p className="scene-kicker">
-        <em>Four projects, four timelines.</em>
+        <em>Five projects, five timelines.</em>
       </p>
       <h2>把想法，推进到可验证的作品。</h2>
       <p className="scene-text">
-        <Words text="两款负责的教育产品，以及研究与 Agent 工作流实践。点击任意一个宇宙，或继续向下滚动逐个浏览。" />
+        <Words text="一套自建的 AI 素材工作台、两款负责的教育产品，以及研究与 Agent 工作流实践。点击任意一个宇宙，或继续向下滚动逐个浏览。" />
       </p>
     </div>
   );
@@ -105,7 +105,7 @@ function ProjectPanel({ project, onOpen, reduced }) {
     <div className="scene-copy project-copy" style={{ "--strand": project.color }}>
       <p className="scene-kicker">
         <em className="hud">//{project.number}</em>
-        <span>/ 04 · {project.category}</span>
+        <span>/ {String(projects.length).padStart(2, "0")} · {project.category}</span>
       </p>
       <h2>{project.title}</h2>
       <p className="scene-subtitle">
@@ -144,15 +144,17 @@ function ExperiencePanel() {
             <p>{experience.desc}</p>
           </div>
         </div>
-        <div className="timeline-item">
-          <span className="timeline-period">{education.period}</span>
-          <div className="timeline-body">
-            <h3>
-              {education.school} <em>· {education.degree}</em>
-            </h3>
-            <p>设计学背景，兼修产品方法、交互设计与数据思维。</p>
+        {education.map((school) => (
+          <div className="timeline-item" key={school.school}>
+            <span className="timeline-period">{school.period}</span>
+            <div className="timeline-body">
+              <h3>
+                {school.school} <em>· {school.degree}</em>
+              </h3>
+              {school.note && <p>{school.note}</p>}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

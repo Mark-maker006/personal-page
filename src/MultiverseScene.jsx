@@ -8,12 +8,13 @@ import {
   SAMPLES,
   buildShapes,
 } from "./shapes";
-import { SEED, TRUNK_TONES } from "./strands";
+import { SEED, STRAND_COUNT, TRUNK_TONES } from "./strands";
 import { createPostFX } from "./postfx";
 
 const FOV = 50;
 const TAN = Math.tan(THREE.MathUtils.degToRad(FOV / 2));
 const THREADS = 32;
+const LABEL_ABOVE = new Set(["workbench", "phonics", "research"]);
 
 // 每个粒子属于一条脉络（aStrand）里的一根细丝（aThread），沿路径的位置是 aU + 时间 × 流速。
 // 相邻两幕的路径都从形态纹理里取，再按 uMorph 插值（每个粒子带一点随机先后，像一群光点迁徙）。
@@ -27,8 +28,8 @@ const vertexShader = /* glsl */ `
   uniform float uFlow;
   uniform float uScale;
   uniform float uBreath;
-  uniform vec4 uEmph;
-  uniform vec4 uSpread;
+  uniform float uEmph[${STRAND_COUNT}];
+  uniform float uSpread[${STRAND_COUNT}];
   uniform vec3 uBundle;
   uniform vec3 uRayO;
   uniform vec3 uRayD;
@@ -51,7 +52,7 @@ const vertexShader = /* glsl */ `
   varying float vAlpha;
 
   vec4 samplePath(float shape, float u) {
-    int row = int(shape * 4.0 + aStrand + 0.5);
+    int row = int(shape * ${STRAND_COUNT}.0 + aStrand + 0.5);
     float fx = clamp(u, 0.0, 1.0) * ${SAMPLES - 1}.0;
     int x0 = int(floor(fx));
     int x1 = min(x0 + 1, ${SAMPLES - 1});
@@ -63,9 +64,9 @@ const vertexShader = /* glsl */ `
   }
 
   void main() {
-    vec4 sel = vec4(equal(vec4(aStrand), vec4(0.0, 1.0, 2.0, 3.0)));
-    float emph = dot(uEmph, sel);
-    float spread = dot(uSpread, sel) * uBreath;
+    int si = int(aStrand + 0.5);
+    float emph = uEmph[si];
+    float spread = uSpread[si] * uBreath;
     float u = fract(aU + uTime * uFlow * aSpeed);
     float du = 2.0 / ${SAMPLES}.0;
     vec4 A = samplePath(uShapeA, u);
@@ -294,9 +295,9 @@ export default function MultiverseScene({ projects, scenes, progressRef, reduced
     geo.setAttribute("aColor", new THREE.BufferAttribute(aColor, 3));
 
     const pathTex = new THREE.DataTexture(
-      new Float32Array(SAMPLES * 4 * scenes.length * 4),
+      new Float32Array(SAMPLES * 4 * scenes.length * STRAND_COUNT),
       SAMPLES,
-      scenes.length * 4,
+      scenes.length * STRAND_COUNT,
       THREE.RGBAFormat,
       THREE.FloatType,
     );
@@ -312,8 +313,8 @@ export default function MultiverseScene({ projects, scenes, progressRef, reduced
       uFlow: { value: reduced ? 0 : 0.022 },
       uScale: { value: 1 },
       uBreath: { value: 1 },
-      uEmph: { value: new THREE.Vector4(1, 1, 1, 1) },
-      uSpread: { value: new THREE.Vector4() },
+      uEmph: { value: new Array(STRAND_COUNT).fill(1) },
+      uSpread: { value: new Array(STRAND_COUNT).fill(0) },
       uBundle: { value: new THREE.Color(tone) },
       uRayO: { value: new THREE.Vector3() },
       uRayD: { value: new THREE.Vector3(0, 0, -1) },
@@ -392,7 +393,7 @@ export default function MultiverseScene({ projects, scenes, progressRef, reduced
         return { cam, look };
       };
       const fitD = Math.max(14, (7 * sx) / (TAN * camera.aspect));
-      const all = (v) => new THREE.Vector4(v, v, v, v);
+      const all = (v) => new Array(STRAND_COUNT).fill(v);
       const base = { emph: all(1), spread: all(0.09), labels: 0, seed: 0, seedPos: new THREE.Vector3(...SEED) };
       switch (sc.type) {
         case "hero":
@@ -416,8 +417,8 @@ export default function MultiverseScene({ projects, scenes, progressRef, reduced
           };
         case "project": {
           const n = nodePos[sc.project];
-          const emph = new THREE.Vector4(0.12, 0.12, 0.12, 0.12).setComponent(sc.project, 1);
-          const spread = new THREE.Vector4(0.08, 0.08, 0.08, 0.08).setComponent(sc.project, 0.04);
+          const emph = all(0.12).map((v, i) => (i === sc.project ? 1 : v));
+          const spread = all(0.08).map((v, i) => (i === sc.project ? 0.04 : v));
           return { ...base, emph, spread, ...(narrow ? frame(n, 8.5, 0, 0.36) : frame(n, 8.4, 0.4, 0.02)) };
         }
         case "about": {
@@ -554,8 +555,10 @@ export default function MultiverseScene({ projects, scenes, progressRef, reduced
         uniforms.uBurst.value = -1;
       }
       uniforms.uBreath.value = reduced ? 1 : 1 + Math.sin(time * 1.1) * 0.12;
-      uniforms.uEmph.value.lerpVectors(a.emph, b.emph, f);
-      uniforms.uSpread.value.lerpVectors(a.spread, b.spread, f);
+      for (let i = 0; i < STRAND_COUNT; i++) {
+        uniforms.uEmph.value[i] = a.emph[i] + (b.emph[i] - a.emph[i]) * f;
+        uniforms.uSpread.value[i] = a.spread[i] + (b.spread[i] - a.spread[i]) * f;
+      }
 
       // 指针视线：从镜头出发穿过弹簧追随后的指针位置
       tmp.set(spring.x, spring.y, 0.5).unproject(camera);
@@ -730,8 +733,8 @@ export default function MultiverseScene({ projects, scenes, progressRef, reduced
               key={project.id}
               ref={(el) => (labelRefs.current[i] = el)}
               type="button"
-              // 中间两条分支最高、彼此最近，标签放到光点上方，避免和两侧的标签挤在一起
-              className={`universe-node ${i === 1 || i === 2 ? "is-above" : ""}`}
+              // 中间几条分支最高、彼此最近，标签放到光点上方，避免和两侧的标签挤在一起
+              className={`universe-node ${LABEL_ABOVE.has(project.id) ? "is-above" : ""}`}
               style={{ "--strand": project.color }}
               aria-label={`${project.title}：第 ${project.number} 号宇宙`}
               tabIndex={-1}

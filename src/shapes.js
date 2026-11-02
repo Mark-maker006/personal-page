@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { SEED, SEPARATE_Y, strandPaths } from "./strands";
+import { SEED, SEPARATE_Y, STRAND_COUNT, strandPaths } from "./strands";
 
 // 粒子形态表：每一幕、每条脉络各是一条路径，重采样成固定点数后塞进一张浮点纹理。
 // 运行时粒子只沿路径流动、在相邻两幕的路径之间插值，不做任何实时几何计算。
@@ -10,6 +10,9 @@ export const ABOUT_CENTER = new THREE.Vector3(0, 0.8, 0);
 export const CONTACT_CENTER = new THREE.Vector3(0, 0.6, 0);
 const TAU = Math.PI * 2;
 const ABOUT_TINT = 0.7;
+// 脉络条数与居中偏移：各幕按条数均分角度、按中心对称排布
+const N = STRAND_COUNT;
+const MID = (N - 1) / 2;
 
 // 路径构造器：点的 w >= 0 表示可见（w 同时是“交汇白 → 项目色”的混合量），w < 0 是隐藏的跳转段；
 // wt 是该段在时长上的权重，低权重的段粒子走得快、分到的粒子少。
@@ -68,7 +71,7 @@ function seed(p, i) {
   for (let k = 0; k <= n; k++) {
     const t = k / n;
     const phi = Math.PI * (t < 0.5 ? 2 * t : 2 - 2 * t);
-    const lon = t * TAU * 9 + (i * TAU) / 4;
+    const lon = t * TAU * 9 + (i * TAU) / N;
     const r = 1.05;
     const x = r * Math.sin(phi) * Math.cos(lon);
     const y = r * Math.cos(phi);
@@ -82,12 +85,12 @@ function seed(p, i) {
   }
 }
 
-// 交织：四束光丝在低处松散地拧成一股
+// 交织：各束光丝在低处松散地拧成一股
 function braid(p, i) {
   const n = 400;
   for (let k = 0; k <= n; k++) {
     const t = k / n;
-    const a = t * TAU * 3.2 + (i * TAU) / 4;
+    const a = t * TAU * 3.2 + (i * TAU) / N;
     const r = 0.36 + 0.16 * Math.sin(t * TAU * 2 + i);
     p.add(r * Math.cos(a) + 0.25 * Math.sin(t * 4), -5 + t * 6.4, r * Math.sin(a), smoothstep(0.8, 1, t) * 0.6);
   }
@@ -123,7 +126,7 @@ function twig(p, origin, dir, len, depth, rand, w = 1, sx = 1) {
   }
 }
 
-// 四个宇宙：从种子出发、交汇后分离的四条分支（就是 strands.js 的手调曲线）。
+// 各个宇宙：从种子出发、交汇后分离的四条分支（就是 strands.js 的手调曲线）。
 // 主分支分离之后再“抽”出两根细枝，像时间线上又发生了更小的分叉
 function branch(p, curve, separate, sx, wt = 1, seedNo = 1) {
   const n = 320;
@@ -230,24 +233,64 @@ function pipeline(p, c, s) {
   }
 }
 
-const SIGNATURES = { reading: pages, phonics: letters, research: graph, agent: pipeline };
+// 素材工作台：前后错开的几层图层框，最前一层摆着一格格素材，像空房间底图上叠放的独立物件
+function layers(p, c, s) {
+  const w = 2.6;
+  const h = 1.7;
+  for (let j = 0; j < 4; j++) {
+    const ox = (j - 1.5) * 0.32;
+    const oy = (j - 1.5) * -0.26;
+    const z = (j - 1.5) * -0.55;
+    const corners = [[-w, -h], [w, -h], [w, h], [-w, h], [-w, -h]];
+    p.jump(c.x + (ox + corners[0][0]) * s, c.y + (oy + corners[0][1]) * s, c.z + z * s);
+    for (let e = 1; e < corners.length; e++) {
+      const [ax, ay] = corners[e - 1];
+      const [bx, by] = corners[e];
+      for (let k = 1; k <= 40; k++) {
+        const t = k / 40;
+        p.add(c.x + (ox + ax + (bx - ax) * t) * s, c.y + (oy + ay + (by - ay) * t) * s, c.z + z * s);
+      }
+    }
+  }
+  // 最前一层：3 × 2 个素材格
+  const ox = 1.5 * 0.32;
+  const oy = 1.5 * -0.26;
+  const z = 1.5 * 0.55;
+  for (let r = 0; r < 2; r++) {
+    for (let q = 0; q < 3; q++) {
+      const x = ox + (q - 1) * 1.55;
+      const y = oy + (r - 0.5) * 1.5;
+      const half = 0.5;
+      p.jump(c.x + (x - half) * s, c.y + (y - half) * s, c.z + z * s);
+      [[half, -half], [half, half], [-half, half], [-half, -half]].forEach(([dx, dy], e, arr) => {
+        const [px, py] = e ? arr[e - 1] : [-half, -half];
+        for (let k = 1; k <= 12; k++) {
+          const t = k / 12;
+          p.add(c.x + (x + px + (dx - px) * t) * s, c.y + (y + py + (dy - py) * t) * s, c.z + z * s, 1, 2);
+        }
+      });
+    }
+  }
+}
+
+const SIGNATURES = { workbench: layers, reading: pages, phonics: letters, research: graph, agent: pipeline };
 
 // 经历：一条时间轴，每条脉络在自己的里程碑处隆起
 function timeline(p, i, sx) {
   const W = 4.2 * sx;
-  const mx = -W + ((i + 0.5) * 2 * W) / 4;
+  const mx = -W + ((i + 0.5) * 2 * W) / N;
   for (let k = 0; k <= 500; k++) {
     const x = -W + (2 * W * k) / 500;
     const bump = Math.exp(-(((x - mx) / 0.16) ** 2)) * 0.9;
-    const y = ABOUT_CENTER.y + (i - 1.5) * 0.14 + 0.06 * Math.sin(x * 1.7 + i * 1.3) + bump;
-    p.add(x, y, (i - 1.5) * 0.2, ABOUT_TINT);
+    const y = ABOUT_CENTER.y + (i - MID) * 0.14 + 0.06 * Math.sin(x * 1.7 + i * 1.3) + bump;
+    p.add(x, y, (i - MID) * 0.2, ABOUT_TINT);
   }
 }
 
-// 方法：四层倾斜的同心环
+// 方法：每条脉络一层倾斜的同心环
 function rings(p, i, sx) {
-  const R = 0.9 + i * 0.55;
-  const y0 = ABOUT_CENTER.y + (1.5 - i) * 0.38;
+  const R = 0.9 + (i * 1.65) / (N - 1);
+  const y0 = ABOUT_CENTER.y + (MID - i) * (1.14 / MID) * 0.5;
   for (let k = 0; k <= 360; k++) {
     const a = (k / 360) * TAU;
     const x = R * Math.cos(a);
@@ -256,11 +299,11 @@ function rings(p, i, sx) {
   }
 }
 
-// 工具：四层前后错开的网格
+// 工具：每条脉络一层前后错开的网格
 function grid(p, i, sx) {
   const half = 1.7;
   const lines = 5;
-  const z = (i - 1.5) * 0.9;
+  const z = (i - MID) * (2.7 / (N - 1));
   const cy = ABOUT_CENTER.y;
   for (let r = 0; r < lines; r++) {
     const y = cy - half + (2 * half * r) / (lines - 1);
@@ -277,7 +320,7 @@ function grid(p, i, sx) {
 
 // 与 Agent 协作：两股双螺旋
 function helix(p, i, sx) {
-  const phase = (i < 2 ? 0 : Math.PI) + (i % 2) * 0.28;
+  const phase = (i < N / 2 ? 0 : Math.PI) + (i % 2) * 0.28;
   for (let k = 0; k <= 400; k++) {
     const t = k / 400;
     const a = t * TAU * 2.5 + phase;
@@ -289,14 +332,14 @@ function helix(p, i, sx) {
 function tree(p, i, sx) {
   const c = CONTACT_CENTER;
   const rand = rng(500 + i * 31);
-  // 主干：四股光丝在下方缠绕成一根
+  // 主干：各股光丝在下方缠绕成一根
   for (let k = 0; k <= 200; k++) {
     const t = k / 200;
-    const a = t * TAU * 2.2 + (i * TAU) / 4;
+    const a = t * TAU * 2.2 + (i * TAU) / N;
     p.add(c.x + 0.24 * Math.cos(a) * sx, c.y - 3.4 + t * 3.2, c.z + 0.24 * Math.sin(a), 0);
   }
   // 主枝：从主干顶端各自向外上方弯出
-  const spread = (i - 1.5) * 1.15;
+  const spread = (i - MID) * (3.45 / (N - 1));
   const limb = new THREE.QuadraticBezierCurve3(
     new THREE.Vector3(c.x, c.y - 0.2, c.z),
     new THREE.Vector3(c.x + spread * 0.5, c.y + 1.2, c.z + (i % 2 ? 0.3 : -0.3)),
@@ -340,7 +383,7 @@ export function buildShapes(projects, scenes, sx, sig) {
     };
   });
 
-  const data = new Float32Array(SAMPLES * 4 * scenes.length * 4);
+  const data = new Float32Array(SAMPLES * 4 * scenes.length * N);
   scenes.forEach((sc, si) => {
     projects.forEach((project, i) => {
       const p = makePath();
@@ -370,7 +413,7 @@ export function buildShapes(projects, scenes, sx, sig) {
         default:
           branch(p, b.curve, b.separate, sx, 1, i + 1);
       }
-      resample(p.pts, data, (si * 4 + i) * SAMPLES * 4);
+      resample(p.pts, data, (si * N + i) * SAMPLES * 4);
     });
   });
   return { data, nodes: branches.map((b) => b.node), forks: branches.map((b) => b.fork) };

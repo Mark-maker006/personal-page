@@ -3,8 +3,47 @@ export const asset = (file) =>
 // 真实产物、历史原型与上线效果分别标注，避免跨版本拼接。
 export const projects = [
   {
-    id: "reading",
+    id: "workbench",
     number: "01",
+    color: "#7cf29a",
+    title: "素材生产工作台",
+    category: "AI tooling / Vibe Coding",
+    subtitle: "让美术素材，按同一个标准被生产出来。",
+    summary:
+      "为绕开「UI 出图 → 后端配置」的排期瓶颈，用 AI Coding 四天搭起从意向图到场景交付的内部工作台。",
+    cover: "workbench-ui.webp",
+    images: [
+      ["workbench-ui.webp", "工作台主界面 · 意向图对比、场景摆放与单件重做"],
+      ["workbench-redo.webp", "单件重做 · 五个阶段的实时进度与中间产物"],
+      ["workbench-compare.webp", "意向图叠加对比 · 调整与大工作台的遮挡关系"],
+      ["workbench-sheet.webp", "第三关素材 · 统一画风的批量产出（节选）"],
+    ],
+    context:
+      "装扮空间每加一关，都要先等 UI 设计师出素材图，再由后端配置位置与层级。排期动辄一周，每批图片的视角、画风和尺寸都不统一，产品、设计、后端之间要来回沟通好几轮。",
+    decision:
+      "先收窄范围：游戏引擎与 APP 接入暂缓，只跑通「需求 → 美术」这一段，用两件代表素材做小样。把透视与画风拆成两个独立验收条件；实物与幽灵位共用一份布局；需要调整遮挡的家具也拆成独立素材。最后把一次性的关卡页面，沉淀为多关卡共用的工作台。",
+    verification:
+      "第三关产出 40 件独立素材与空房间底图，每件导出彩色、灰图、虚线轮廓、幽灵四种状态。原本约一周、多轮沟通的配置，现在两天内完成并进入合并上线流程；后端反馈功能完整、沟通成本明显降低。配套 SOP、交付校验与 58 项自动化回归。",
+    challenges: [
+      [
+        "单件出图好看，放进场景却像贴纸",
+        "先用 ControlNet 深度图锁住透视，再单独重绘画风；柜子等立体物件被旧结构限制后，改为按摆放位置选方法，并在中途加一步人工透视确认。",
+      ],
+      [
+        "后台能重做，用的人却找不到入口",
+        "把「对照意向图 → 框选参考区域 → 提交重做 → 新旧对比 → 采用」搬进页面；长任务展示阶段、耗时与中间产物，采用后画布、属性与素材库同步替换。",
+      ],
+      [
+        "家具画进了背景，遮挡关系调不动",
+        "改为空房间底图 + 全部可移动物件独立交付，是否可购不再是拆分依据；规则写进 SOP，交付时自动拦截漏件与重复 ID。",
+      ],
+    ],
+    boundary:
+      "工作台是本机内部工具，截图来自真实界面与第三关产出。40 件素材中 2 件已有明确的审核通过记录，其余仍在人工审核；工作台尚未接入游戏引擎与正式 APP。「一周到两天」来自实际项目节奏的对比，不是系统统计。",
+  },
+  {
+    id: "reading",
+    number: "02",
     color: "#3ee8ff",
     title: "悦读小达人",
     category: "Product strategy / Gamification",
@@ -42,7 +81,7 @@ export const projects = [
   },
   {
     id: "phonics",
-    number: "02",
+    number: "03",
     color: "#ffb547",
     title: "单词拼读王",
     category: "Learning experience / Pet companion",
@@ -79,7 +118,7 @@ export const projects = [
   },
   {
     id: "research",
-    number: "03",
+    number: "04",
     color: "#9b7bff",
     title: "从竞品观察到产品判断",
     category: "Research / Product decisions",
@@ -116,7 +155,7 @@ export const projects = [
   },
   {
     id: "agent",
-    number: "04",
+    number: "05",
     color: "#ff4fa8",
     title: "Agent 动画工作流",
     category: "AI workflow / Creative tooling",
@@ -133,7 +172,7 @@ export const projects = [
     decision:
       "拆开提交与查询，保留任务 ID；区分输入职责与阶段产物，把恢复路径和验收规则写进工具流程。",
     verification:
-      "完成插件初版与两秒动作预览，从技术可用、动作节奏、参考一致三方面检查。",
+      "完成插件与两秒动作预览，从技术可用、动作节奏、参考一致三方面检查；随后在公司内部推广，并通过内部分享培训同事上手使用。",
     challenges: [
       [
         "长任务超时后重复生成",
@@ -148,7 +187,7 @@ export const projects = [
         "增加关键帧接触表和节奏验收，区分技术通过与运动表现通过。",
       ],
     ],
-    boundary: "目前是工具探索与短预览，尚未证明跨素材稳定性或业务效率提升。",
+    boundary: "插件已在公司内部推广使用；跨素材的稳定性与效率提升尚未做量化统计。",
   },
 ];
 export const methods = [
@@ -178,16 +217,24 @@ export const methods = [
 export const experience = {
   company: "杭州雪梨教育",
   role: "产品实习生",
-  period: "2025 — 2026",
-  desc: "负责悦读小达人游戏化机制设计与原型迭代，推进单词拼读王宠物伴学体验；参与竞品研究、数据验收与 PRD 对齐，全程与研发、设计协同交付。",
+  period: "2026 · 实习 5 个月",
+  desc: "负责悦读小达人游戏化机制设计与原型迭代，推进单词拼读王宠物伴学体验；用 AI Coding 自建素材生产工作台，把关卡配置从约一周缩短到两天内；参与竞品研究、数据验收与 PRD 对齐。",
 };
 
-// 教育信息
-export const education = {
-  school: "燕山大学",
-  degree: "硕士 · 设计学",
-  period: "2025.09 — 2027.06（预计）",
-};
+// 教育信息：硕士在前，本科在后
+export const education = [
+  {
+    school: "燕山大学",
+    degree: "硕士 · 设计学",
+    period: "2025.09 — 2027.06（预计）",
+    note: "设计学背景，兼修产品方法、交互设计与数据思维。",
+  },
+  {
+    school: "海南大学",
+    degree: "本科 · 211",
+    period: "2020.09 — 2024.06",
+  },
+];
 
 // 技能标签：按相关性分组
 export const skills = [
@@ -203,6 +250,7 @@ export const skills = [
   { label: "HTML / CSS", group: "tool" },
   { label: "React", group: "tool" },
   { label: "Agent workflow", group: "tool" },
+  { label: "Codex / Claude / Cursor", group: "tool" },
   // 探索
   { label: "自动化播客", group: "side" },
   { label: "ESP32 硬件", group: "side" },
@@ -210,6 +258,10 @@ export const skills = [
 
 // 侧边项目（包装后）
 export const sideProjects = [
+  {
+    title: "公司内部 AI 分享",
+    desc: "面向产品、设计、研发、运营等全员主讲《Prompt 工程实战》，用互动课件和真实生成结果演示 Prompt 迭代与验收，沉淀 3 套团队模板。",
+  },
   {
     title: "自动化播客工作流",
     desc: "串联 RSS 采集、AI 改写、语音合成、背景混音与 OSS 发布，实现从新闻到音频的全链路自动化。",

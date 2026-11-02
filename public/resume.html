@@ -32,7 +32,8 @@
     .summary { color: var(--ink); }
     /* 教育信息尚待补充，用稳定的两行占位预留院校、专业和就读时间。 */
     .education { padding-bottom: 16px; border-bottom: 1px solid var(--line); break-inside: avoid; }
-    .education h3 { color: var(--muted); font-weight: 500; }
+    .education h3 + p .tag { margin-left: 6px; color: var(--accent); font-size: 12px; }
+    .education .meta + h3 { margin-top: 12px; }
     .item { padding: 0 0 17px; margin-bottom: 17px; border-bottom: 1px solid var(--line); break-inside: avoid; }
     .item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
     .meta { color: var(--muted); font-size: 12px; }
@@ -103,7 +104,7 @@
       <div>
         <section aria-labelledby="profile-title">
           <h2 id="profile-title">个人概述 <span>Profile</span></h2>
-          <p class="summary">2027 届设计学硕士，现任雪梨教育产品实习生。负责两款教育 App 的游戏化机制与学习体验，游戏化上线后双端日均活跃 +23.36%；后端排期跟不上产品节奏时，用 Codex、Claude、Cursor 独立 Vibe Coding 内部素材生产工作台，把关卡配置周期从约一周缩短到两天内。</p>
+          <p class="summary">211 本科、2027 届设计学硕士，现任雪梨教育产品实习生。负责两款教育 App 的游戏化机制与学习体验，游戏化上线后双端日均活跃 +23.36%；后端排期跟不上产品节奏时，用 Codex、Claude、Cursor 独立 Vibe Coding 内部素材生产工作台，把关卡配置周期从约一周缩短到两天内。</p>
         </section>
         <section aria-labelledby="work-title">
           <h2 id="work-title">工作经历 <span>Experience</span></h2>
@@ -150,6 +151,9 @@
           <h3>燕山大学</h3>
           <p>设计学 / 硕士在读</p>
           <p class="meta">2025.09 — 2027.06（预计）</p>
+          <h3>海南大学</h3>
+          <p>本科<span class="tag">211</span></p>
+          <p class="meta">2020.09 — 2024.06</p>
         </section>
         <section aria-labelledby="data-title">
           <h2 id="data-title">数据结果 <span>Impact</span></h2>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mark 的产品经理与产品设计简历：教育产品游戏化、竞品研究与 Agent 工作流实践。" />
-  <title>Mark · 产品经理 / 产品实习 / 产品设计简历</title>
+  <meta name="description" content="Mark 的 AI 产品经理简历（2027 届）：教育产品游戏化、Vibe Coding 素材生产工作台与 AI 工作流实践。" />
+  <title>Mark · AI 产品经理简历</title>
   <style>
     /* 拉丁字母和数字优先使用 Times New Roman，中文交给苹方与系统中文字体。 */
     @font-face { font-family: 'Resume Latin'; src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Times'); font-style: normal; font-weight: 100 900; unicode-range: U+0000-024F, U+1E00-1EFF; }
@@ -48,6 +48,9 @@
     .metric dt { color: var(--muted); font-size: 12px; }
     .metric dd { margin: 0; color: var(--accent); font-size: 25px; line-height: 1.1; white-space: nowrap; }
     .caption { margin-top: 11px; font-size: 11px; line-height: 1.65; }
+    /* 私密字段只在本地导出投递版时由 scripts/export-resume.mjs 注入，公开页面保持为空。 */
+    [data-private]:empty { display: none; }
+    .compact b { color: var(--ink); font-weight: 600; }
     .print { position: fixed; right: 20px; bottom: 20px; padding: 10px 16px; border: 0; border-radius: 12px; background: var(--accent); color: #fff; cursor: pointer; }
     /* A4 打印保留两栏并隐藏控件，避免边框和留白挤占简历内容。 */
     @page { size: A4; margin: 13mm; }
@@ -88,10 +91,10 @@
     <header>
       <div class="identity">
         <img class="portrait" src="assets/mark-portrait.webp" width="256" height="256" alt="Mark 的插画头像" />
-        <div><h1>Mark</h1><div class="role">产品经理 / 产品实习 / 产品设计</div></div>
+        <div><h1><span data-private="name"></span> Mark</h1><div class="role">2027 届 · AI 产品经理（校招 / 实习）</div></div>
       </div>
       <div class="contact">
-        <span>产品原型 · AI 工作流</span>
+        <span data-private="contact"></span>
         <a href="https://github.com/Mark-maker006">github.com/Mark-maker006</a>
         <a href="https://mark-maker006.github.io/personal-page/">mark-maker006.github.io/personal-page</a>
       </div>
@@ -100,48 +103,43 @@
       <div>
         <section aria-labelledby="profile-title">
           <h2 id="profile-title">个人概述 <span>Profile</span></h2>
-          <p class="summary">围绕悦读小达人、单词拼读王两款教育产品，推进用户场景、产品机制、交互原型与验收。通过 Agent 协作处理重复工作，把判断、取舍、数据口径与交付边界写清楚。</p>
+          <p class="summary">2027 届设计学硕士，现任雪梨教育产品实习生。负责两款教育 App 的游戏化机制与学习体验，游戏化上线后双端日均活跃 +23.36%；后端排期跟不上产品节奏时，用 Codex、Claude、Cursor 独立 Vibe Coding 内部素材生产工作台，把关卡配置周期从约一周缩短到两天内。</p>
         </section>
         <section aria-labelledby="work-title">
-          <h2 id="work-title">项目实践 <span>Selected work</span></h2>
+          <h2 id="work-title">工作经历 <span>Experience</span></h2>
+          <!-- 公司、身份与时间统一写在首条，下面三个项目同属这段经历。 -->
+          <p class="meta">雪梨教育 · 产品实习生 · 在职，已实习 5 个月</p>
           <div class="item">
-            <div class="meta">悦读小达人 · 产品机制与原型</div>
-            <h3>让游戏化服务持续阅读</h3>
+            <div class="meta">素材生产工作台 · Vibe Coding（Codex / Claude / Cursor）</div>
+            <h3>自建 AI 素材生产工作台，关卡配置从约一周缩短到两天</h3>
             <ul>
-              <li>围绕星币、任务、家具空间与多孩管理，梳理阅读行为、奖励反馈和长期资产之间的关系。</li>
-              <li>对齐 PRD、可交互原型、导航与测试口径，处理奖励上限、任务容量和多版本规则冲突。</li>
-              <li>重新导出友盟双端报表，比较上线前后各 28 天的活跃、启动与成熟批次留存；识别 iOS 事件缺失，区分整体趋势与功能贡献。</li>
+              <li>后端配置排期满足不了产品侧的要求与进度，独立开发内部工作台，打通“需求意向图 → AI 生图 / ControlNet → 去背 → 多状态导出 → 场景摆放 → 布局与 metadata 回写”全链路，支撑第三关 40 件场景素材交付。</li>
+              <li>支持拖拽摆放与遮挡层级调整、意向图拉帘对比、框选区域单件重做与新旧版本对比，由 1–2 名专岗人员日常使用。</li>
+              <li>原本约一周、需多轮沟通返工的配置，现两天内完成并进入合并上线；配套 SOP、交付校验（漏件 / 重复 ID）与自动化测试，新关卡改一份 JSON 即可复用。</li>
+            </ul>
+          </div>
+          <div class="item">
+            <div class="meta">悦读小达人 · 游戏化体系</div>
+            <h3>搭建阅读激励闭环，上线后日活 +23%</h3>
+            <ul>
+              <li>围绕星币、任务、家具空间与多孩管理，设计“阅读行为 → 即时奖励 → 长期资产”的激励闭环。</li>
+              <li>输出 PRD 与可交互原型，统一导航与测试口径，解决奖励上限、任务容量与多版本规则冲突。</li>
+              <li>自主导出友盟双端数据做上线前后各 28 天对比（结果见右栏），并定位出 iOS 埋点事件缺失。</li>
             </ul>
           </div>
           <div class="item">
             <div class="meta">单词拼读王 · 学习体验与宠物激励</div>
-            <h3>让陪伴反馈回到学习过程</h3>
+            <h3>分层设计宠物反馈，在素材与弱网限制下保住激励体验</h3>
             <ul>
-              <li>负责六步学习体验、宠物伴学与猫咪品种扩展的需求和原型迭代，梳理动作、音效、成长资源及埋点。</li>
-              <li>针对素材产能与弱网限制，从四级宠物切入，拆分轻反馈、每词完成庆祝和首次入场，推动全宠物升级演出复用。</li>
-              <li>以原型核对答题、输入和反馈状态；伴学与上新方案仍待评审，历史 A/B 结果待核验，不填未证实增幅。</li>
+              <li>负责六步学习流程、宠物伴学与猫咪品种扩展的需求和原型迭代，梳理动作、音效、成长资源与埋点方案。</li>
+              <li>针对素材产能与弱网限制，提出从四级宠物切入的分层反馈（轻反馈 / 单词完成庆祝 / 首次入场），推动升级演出在全部宠物上复用。</li>
+              <li>用可交互原型逐一核对答题、输入与反馈状态，作为开发与测试的验收依据。</li>
             </ul>
           </div>
           <div class="item">
-            <div class="meta">绘本学习产品 · 竞品与体验研究</div>
-            <h3>把竞品观察转化为产品决策</h3>
+            <div class="meta">绘本学习产品 · 竞品研究</div>
             <ul>
-              <li>按游客、非会员、会员状态走查，以路径与截图组织证据，转化为我方借鉴边界、优先级和验证指标。</li>
-            </ul>
-          </div>
-          <div class="item">
-            <div class="meta">Agent animation toolkit · AI 工具探索</div>
-            <h3>把失败经验写进工作流</h3>
-            <ul>
-              <li>设计长任务恢复、透明度检查及三类动画验收，形成插件初版与短预览；跨素材稳定性和效率收益待验证。</li>
-            </ul>
-          </div>
-          <div class="item">
-            <div class="meta">自动化播客 · AI 探索与实践</div>
-            <h3>搭建从新闻采集到音频发布的工作流</h3>
-            <ul>
-              <li>围绕《灵动比泽》，串联 RSS 新闻采集、AI 口播改写、语音合成、背景混音与 OSS / RSS 发布，搭建自动化内容生产链路。</li>
-              <li>迭代选题、来源归属与开场收尾规则，排查稿件截断和人声淡出问题，持续完善生成质量与听感验收。</li>
+              <li>按游客、非会员、会员三种状态实测竞品路径，以截图与路径组织证据，输出我方借鉴边界、优先级与验证指标。</li>
             </ul>
           </div>
         </section>
@@ -154,34 +152,32 @@
           <p class="meta">2025.09 — 2027.06（预计）</p>
         </section>
         <section aria-labelledby="data-title">
-          <h2 id="data-title">数据观察 <span>Before / After</span></h2>
+          <h2 id="data-title">数据结果 <span>Impact</span></h2>
           <div class="note">
-            <h3>游戏化上线前后观察</h3>
-            <p>悦读小达人 · Android + iOS 全 App</p>
+            <h3>游戏化上线前后对比</h3>
+            <p>悦读小达人 · Android + iOS</p>
             <dl class="metrics">
               <div class="metric"><dt>日均活跃用户</dt><dd>+23.36%</dd></div>
               <div class="metric"><dt>日均启动次数</dt><dd>+26.10%</dd></div>
               <div class="metric"><dt>新用户 D7 留存</dt><dd>+1.99pp</dd></div>
             </dl>
-            <p class="caption">来源：10.19 新导出的友盟双端报表；2026.07.07—08.03 与 08.04—08.31，各 28 天。08.04 上线已确认。双端未跨端去重；活跃、启动为相对变化，D7 从 20.70% 到 22.69%，增加 1.99 个百分点（pp）。无 A/B 测试，不能认定游戏化的因果贡献。</p>
+            <p class="caption">友盟双端报表，上线前后各 28 天（2026.07.07—08.03 vs 08.04—08.31）；D7 留存 20.70% → 22.69%。</p>
           </div>
         </section>
+        <section aria-labelledby="side-title">
+          <h2 id="side-title">AI 实践 <span>Side projects</span></h2>
+          <ul class="compact">
+            <li><b>自动化播客《灵动比泽》</b>：串联 RSS 采集、AI 改写、语音合成、混音与 OSS / RSS 发布，实现新闻到音频的自动化生产。</li>
+            <li><b>Agent 动画插件</b>：设计长任务断点恢复、透明度检查与三类动画验收规则，完成插件初版。</li>
+          </ul>
+        </section>
         <section aria-labelledby="strength-title">
-          <h2 id="strength-title">能力方向 <span>Strengths</span></h2>
-          <p>问题定义 · 信息架构 · 交互状态 · 竞品实测 · 数据口径 · 验收闭环</p>
+          <h2 id="strength-title">核心能力 <span>Strengths</span></h2>
+          <p>需求拆解 · 激励机制设计 · 信息架构 · 交互原型 · AI Coding 落地 · 数据分析 · 验收测试</p>
         </section>
         <section aria-labelledby="tool-title">
-          <h2 id="tool-title">工具实践 <span>Toolkit</span></h2>
-          <div class="skills"><span>Figma</span><span>React</span><span>HTML / CSS</span><span>Agent workflow</span><span>ADB</span><span>数据分析</span><span>测试设计</span><span>文档结构化</span></div>
-        </section>
-        <section aria-labelledby="principle-title">
-          <h2 id="principle-title">工作方法 <span>Principles</span></h2>
-          <ul>
-            <li>先定义用户问题，再选择实现工具。</li>
-            <li>用真实文件、路径与截图支持判断。</li>
-            <li>明确事实、假设与待验证项。</li>
-            <li>从入口、状态和回归路径验收。</li>
-          </ul>
+          <h2 id="tool-title">工具 <span>Toolkit</span></h2>
+          <div class="skills"><span>Codex</span><span>Claude</span><span>Cursor</span><span>Agent 工作流</span><span>React</span><span>HTML / CSS</span><span>Figma</span><span>友盟</span><span>ADB</span><span>PRD / 原型</span><span>测试设计</span></div>
         </section>
       </aside>
     </main>

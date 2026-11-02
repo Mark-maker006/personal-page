@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "test": "node --test tests/portfolio.test.mjs"
+    "test": "node --test tests/portfolio.test.mjs",
+    "resume:pdf": "node scripts/export-resume.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "6.1.2",
